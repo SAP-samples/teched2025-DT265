@@ -28,11 +28,13 @@ The requirements to follow the exercises in this repository are:
 ## Exercises
 
 - [Getting Started](exercises/ex0/README.md)
-    Get familar with the subscriber SAP BTP subaccount of the customer you serve and the development environment. Optionally, you can get an overview of the provider subaccount.
+    - [Get an Overview of the SAP BTP Subaccount of your Customer](exercises/ex0/README.md#sap-btp-subaccount-of-your-customer)
+    - [Configure the Development Environment](exercises/ex0/README.md#development-environment)
+    - [Get an Overview Provider SAP BTP Subaccount](exercises/ex0/README.md#optional-provider-sap-btp-subaccount)
 - [Exercise 1 - Provision Your Multi-tenant Solution to Your Customer](exercises/ex1/README.md)
-    - [Exercise 1.1 - Subscribe the Solution in the Application Subscription of Your Customer](exercises/ex1#exercise-11-sub-exercise-1-description)
-    - [Exercise 1.2 - Configure SAP Build Work Zone](exercises/ex1#exercise-12-sub-exercise-2-description)
-    - [Exercise 1.3 - Configure the Connection to SAP S/4HANA Cloud Public Edition](exercises/ex1#exercise-13-sub-exercise-2-description)
+    - [Exercise 1.1 - Subscribe the Solution in the Application Subscription of Your Customer](exercises/ex1#exercise-11---subscribe-the-solution-in-the-application-subscription-of-your-customer)
+    - [Exercise 1.2 - Configure SAP Build Work Zone](exercises/ex1#exercise-12---configure-sap-build-work-zone)
+    - [Exercise 1.3 - Configure the Connection to SAP S/4HANA Cloud Public Edition](exercises/ex1#exercise-13---configure-the-connection-to-sap-s4hana-cloud-public-edition)
 - [Exercise 2 - Build and Deploy a Tenant Extension for Your Customer](exercises/ex2/README.md)
     - [Exercise 2.1 - Extend the Persistence and the User Interface With Custom Fields](exercises/ex2#exercise-21-sub-exercise-1-description)
     - [Exercise 2.2 - Develop a Fiori UI to Manage the Customer Entity](exercises/ex2#exercise-22-sub-exercise-2-description)

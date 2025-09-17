@@ -2,7 +2,7 @@
 
 In this exercise, you will create provision your multi-tenant solution to the SAP BTP subaccount of your customer.
 
-## Exercise 1.1 - Subscribe the solution in the application subscription of your customer
+## Exercise 1.1 - Subscribe the Solution in the Application Subscription of Your Customer
 
 After completing these steps you will have subscribed the SAP BTP Multi-Tenant Application *Poetry Slam Manager* in the SAP BTP subaccount of your customer.
 

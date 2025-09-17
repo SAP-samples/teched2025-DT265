@@ -2,7 +2,7 @@
 
 In this chapter, you will get familar with the development environment and the subscriber SAP BTP subaccount of the customer you serve.
 
-## SAP BTP subaccount of your Customer
+## Get an Overview of the SAP BTP Subaccount of your Customer
 
 After completing these steps you will have an overview about the subscriber SAP BTP subaccount of your customer.
 
@@ -21,7 +21,7 @@ After completing these steps you will have an overview about the subscriber SAP 
 
     - *View the entitlements, too????*
 
-## Development Environment
+## Configure the Development Environment
 
 After completing these steps you will have accessed and configured the SAP Business Application Studio to develop your customer-specific extension.
 
@@ -37,7 +37,7 @@ After completing these steps you will have accessed and configured the SAP Busin
 > Note: The preconditions for these steps are described in more detail in chapter [Prepare Your SAP BTP Account for Development](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/11-Prepare-BTP-Account.md) of the Partner Reference Application.
 
 
-## (Optional) Provider SAP BTP subaccount
+## (Optional) Get an Overview Provider SAP BTP Subaccount
 
 After completing these steps you will have an overview about the provider SAP BTP subaccount.
 
