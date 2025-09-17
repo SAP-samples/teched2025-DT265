@@ -1,10 +1,10 @@
-# Exercise 4 - Personalize the User Interface for All Users of Your Customer
+# Exercise 3 - Personalize the User Interface for All Users of Your Customer
 
 In this exercise, you will personalize the user interface of the *Poetry Slam Manager* for all users of your Customer with key user flexibility using SAP Build Work Zone.
 
 > Note: There are some preconditions to enable key user flexibility. You can get more details in chapter [Enable Consumer-Specific Extensions](https://github.com/SAP-samples/partner-reference-application-extension/blob/main/Tutorials/02-DataModelExtensibility.md) of the Partner Reference Application.
 
-## Exercise 4.1 - Adapting the User Interface for all Users
+## Exercise 3.1 - Adapting the User Interface for all Users
 
 After completing these steps, the *Price* will be shown in the *Poetry Slams* table of the *Poetry Slam Manager* for all users:
 
