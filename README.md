@@ -23,7 +23,7 @@ The requirements to follow the exercises in this repository are:
 - SAP Business Application Studio
 - SAP S/4HANA Public Cloud instance
 - Provider Subaccount with the Partner Reference Application provided
-- Subscriber Subaccount with IDP... ?
+- Subscriber Subaccount for each customer with trust configuration
 
 ## Exercises
 
@@ -33,14 +33,12 @@ The requirements to follow the exercises in this repository are:
     - [Exercise 1.1 - Subscribe the Solution in the Application Subscription of Your Customer](exercises/ex1#exercise-11-sub-exercise-1-description)
     - [Exercise 1.2 - Configure SAP Build Work Zone](exercises/ex1#exercise-12-sub-exercise-2-description)
     - [Exercise 1.3 - Configure the Connection to SAP S/4HANA Cloud Public Edition](exercises/ex1#exercise-13-sub-exercise-2-description)
-- [Exercise 2 - Build a Tenant Extension for Your Customer](exercises/ex2/README.md)
+- [Exercise 2 - Build and Deploy a Tenant Extension for Your Customer](exercises/ex2/README.md)
     - [Exercise 2.1 - Extend the Persistence and the User Interface With Custom Fields](exercises/ex2#exercise-21-sub-exercise-1-description)
     - [Exercise 2.2 - Develop a Fiori UI to Manage the Customer Entity](exercises/ex2#exercise-22-sub-exercise-2-description)
-- [Exercise 3 - Deploy your Extension to the Application Subscription of your Customer](exercises/ex3/)
-- [Exercise 4 - Test the Application Subscription Including the Integration with Cloud ERP and the Customer-Specific Extension](exercises/ex4/)
-- [Exercise 5 (optional) - Test the Application Subscription Including the Integration with Cloud ERP and the Customer-Specific Extension](exercises/ex5/)
-    - [Exercise 5.1 - Enable Key-User UI Flexibility](exercises/ex5#exercise-51-sub-exercise-1-description)
-    - [Exercise 5.2 - Adopt the UI Cccording your Customer Preferences and Publish the Changes to All Users](exercises/ex5#exercise-52-sub-exercise-5-description)
+- [Exercise 3 - Test the Application Subscription Including the Integration with Cloud ERP and the Customer-Specific Extension](exercises/ex4/)
+- [Exercise 4 (optional) - Personalize the User Interface for All Users of Your Customer](exercises/ex4/)
+
 
 ## Contributing
 Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) to understand the contribution guidelines.

@@ -2,8 +2,6 @@
 
 In this exercise, you will create a tentant extension *Caterer* to select a caterer for a poetry slam in the Poetry Slam Manager of your customer.
 
-> Note: Some steps are required to enable extensibility in the base application *Poetry Slam Manager*. You can get more details in chapter [Enable Consumer-Specific Extensions](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/50-Multi-Tenancy-Features-Tenant-Extensibility.md) of the Partner Reference Application.
-
 ## Exercise 2.1 Sub Exercise 1 Description
 
 After completing these steps you will have created...
