@@ -44,7 +44,7 @@ Follow the steps from here: https://github.com/SAP-samples/partner-reference-app
 
 5. Open *Manage Poetry Slams*.
 
-6. Select a published poetry slams
+6. Select a published poetry slams.
 
 7. You can see that the new *Caterer* section is available. Choose *Edit*, select the newly created caterer for your event from the predefined list.
 
