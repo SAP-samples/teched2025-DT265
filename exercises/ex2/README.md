@@ -20,18 +20,18 @@ Follow the steps from here: https://github.com/SAP-samples/partner-reference-app
 
 1. Now, let's add a new caterer. Launch the *Caterer* application.
 
-    i. In the SAP BTP cockpit of the subscriber subaccount, navigate to *HTML5 Applications* under *HTML5*.
+    1. In the SAP BTP cockpit of the subscriber subaccount, navigate to *HTML5 Applications* under *HTML5*.
 
-    ii. Choose the *Caterer* application from the *Application* table.
+    2. Choose the *Caterer* application from the *Application* table.
 
 2. A list of existing caterers is displayed in the table. Choose *Create* and enter the following details:
 
-    i. *Name*: *Goose*
-    ii. *Contact Person*: *Peter*
-    iii. *Phone*: *+555-1212*
-    iv. *Email*: *peter@goosesap.com*
-    v. *Cuisine*: *Mexican*
-    vi. *Maximum Service Capacity*: *300*
+  1. *Name*: *Goose*
+  2. *Contact Person*: *Peter*
+  3. *Phone*: *+555-1212*
+  4. *Email*: *peter@goosesap.com*
+  5. *Cuisine*: *Mexican*
+  6. *Maximum Service Capacity*: *300*
 
 3. Choose *Create* to add a new caterer.
 
