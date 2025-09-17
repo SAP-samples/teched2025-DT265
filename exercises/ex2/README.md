@@ -26,12 +26,17 @@ Follow the steps from here: https://github.com/SAP-samples/partner-reference-app
 
 2. A list of existing caterers is displayed in the table. Choose *Create* and enter the following details:
 
-  1. *Name*: *Goose*
-  2. *Contact Person*: *Peter*
-  3. *Phone*: *+555-1212*
-  4. *Email*: *peter@goosesap.com*
-  5. *Cuisine*: *Mexican*
-  6. *Maximum Service Capacity*: *300*
+    1. *Name*: *Goose*
+    
+    2. *Contact Person*: *Peter*
+    
+    3. *Phone*: *+555-1212*
+    
+    4. *Email*: *peter@goosesap.com*
+    
+    5. *Cuisine*: *Mexican*
+    
+    6. *Maximum Service Capacity*: *300*
 
 3. Choose *Create* to add a new caterer.
 
