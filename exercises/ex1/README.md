@@ -114,7 +114,7 @@ After completing these steps you will have configured the connection to SAP S/4H
 
 > Note: The configuration in the SAP S/4HANA Cloud Public Edition instance is already setup. In case you want to learn more about the setup, check the chapter [Configure the Integration with SAP S/4HANA Cloud Public Edition](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/34b-Multi-Tenancy-Provisioning-Connect-S4HC.md) of the Partner Reference Application.
 
-## Set Up Destinations to Connect the SAP BTP Application to SAP S/4HANA Cloud Public Edition
+### Set Up Destinations to Connect the SAP BTP Application to SAP S/4HANA Cloud Public Edition
 
 In this section, three destinations are created to access SAP S/4HANA Cloud OData services:
 - Destination **s4hc** to consume SAP S/4HANA Cloud OData services. In this session, basic authentication is used due to simpler demo use case. In the Partner Reference Application, the setup with principal propagation is described..
@@ -172,7 +172,7 @@ In this section, three destinations are created to access SAP S/4HANA Cloud ODat
 
  Your customer uses SAP S/4HANA Public Cloud projects to plan and staff events, to collect costs, and to purchase required equipments. Therefore, the Poetry Slam Manager is connected to the SAP S/4HANA Public Cloud projects to plan the event. To test this integration follow these steps:
 
-1. Open the Poetry Slam Manager application of your customer.
+1. Open the Poetry Slam Manager application of your customer with SAP Build Work Zone.
 
 2. In the Poetry Slams application, an empty list is displayed.
 
