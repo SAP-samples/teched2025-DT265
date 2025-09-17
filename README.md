@@ -13,6 +13,8 @@ Multi-tenant side-by-side extensions based on the SAP BTP empower partners and c
 Imaging you are working for "SLAM-Tech Solutions", an SAP Build partner with focus on speed, impact and bold execution in the tech space. SLAM-Tech Solutions offers a SaaS solution that extends SAP Cloud ERP with 40 new customers that need to be onboarded quickly. 
 As participant of this hands-on session you serve one of those 40 customers and it will be your job to onboard your customer incl. provisioning a tenant, configuring the connection to Cloud ERP, and enhance to the standard solution fulfilling the wish list of your customer.
 
+> Note: This session is done on basis of the [Partner Reference Application](https://github.com/SAP-samples/partner-reference-application).
+
 ## Requirements
 
 The requirements to follow the exercises in this repository are:
@@ -25,16 +27,13 @@ The requirements to follow the exercises in this repository are:
 
 ## Exercises
 
-Provide the exercise content here directly in README.md using [markdown](https://guides.github.com/features/mastering-markdown/) and linking to the specific exercise pages, below is an example.
-
-- [Getting Started](exercises/ex0/)
-    Get familar with the development environment and the Subscriber SAP BTP Subaccount of the customer you serve.
-    *Have a look at entitlements*
-- [Exercise 1 - Provision your multi-tenant solution to your customer](exercises/ex1/)
-    - [Exercise 1.1 - Subscribe the solution in the application subscription of your customer](exercises/ex1#exercise-11-sub-exercise-1-description)
-    - [Exercise 1.2 - Configure the connection to the Cloud ERP](exercises/ex1#exercise-12-sub-exercise-2-description)
-    - [Exercise 1.3 - Configure SAP Build Work Zone](exercises/ex1#exercise-12-sub-exercise-2-description)
-- [Exercise 2 - Build a tenant extension for your customer](exercises/ex2/)
+- [Getting Started](exercises/ex0/README.md)
+    Get familar with the subscriber SAP BTP subaccount of the customer you serve and the development environment. Optionally, you can get an overview of the provider subaccount.
+- [Exercise 1 - Provision Your Multi-tenant Solution to Your Customer](exercises/ex1/README.md)
+    - [Exercise 1.1 - Subscribe the Solution in the Application Subscription of Your Customer](exercises/ex1#exercise-11-sub-exercise-1-description)
+    - [Exercise 1.2 - Configure SAP Build Work Zone](exercises/ex1#exercise-12-sub-exercise-2-description)
+    - [Exercise 1.3 - Configure the Connection to SAP S/4HANA Cloud Public Edition](exercises/ex1#exercise-13-sub-exercise-2-description)
+- [Exercise 2 - Build a Tenant Xxtension for Your Customer](exercises/ex2/README.md)
     - [Exercise 2.1 - Extend the persistence and the user interface with custom fields](exercises/ex2#exercise-21-sub-exercise-1-description)
     - [Exercise 2.2 - Develop a Fiori UI to manage the customer entity](exercises/ex2#exercise-22-sub-exercise-2-description)
 - [Exercise 3 - Deploy your extension to the application subscription of your customer](exercises/ex3/)

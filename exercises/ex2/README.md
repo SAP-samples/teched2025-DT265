@@ -1,6 +1,6 @@
-# Exercise 2 - Exercise 2 Description
+# Exercise 2 - Provision Your Multi-tenant Solution to Your Customer
 
-In this exercise, we will create...
+In this exercise, you will create...
 
 ## Exercise 2.1 Sub Exercise 1 Description
 
@@ -40,3 +40,9 @@ READ TABLE lt_params REFERENCE INTO DATA(lr_params) WITH KEY name = 'cmd'.
 You've now ...
 
 Continue to - [Exercise 3 - Excercise 3 ](../ex3/README.md)
+
+
+[Exercise 1 - Provision your multi-tenant solution to your customer](exercises/ex1/README.md)
+    - [Exercise 1.1 - Subscribe the solution in the application subscription of your customer](exercises/ex1#exercise-11-sub-exercise-1-description)
+    - [Exercise 1.2 - Configure the connection to the Cloud ERP](exercises/ex1#exercise-12-sub-exercise-2-description)
+    - [Exercise 1.3 - Configure SAP Build Work Zone](exercises/ex1#exercise-12-sub-exercise-2-description)
