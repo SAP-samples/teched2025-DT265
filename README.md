@@ -28,17 +28,20 @@ The requirements to follow the exercises in this repository are:
 ## Exercises
 
 - [Getting Started](exercises/ex0/README.md)
+    - [Get an Overview Provider SAP BTP Subaccount](exercises/ex0/README.md#optional-get-an-overview-provider-sap-btp-subaccount)
     - [Get an Overview of the SAP BTP Subaccount of your Customer](exercises/ex0/README.md#get-an-overview-of-the-sap-btp-subaccount-of-your-customer)
     - [Configure the Development Environment](exercises/ex0/README.md#configure-the-development-environment)
-    - [Get an Overview Provider SAP BTP Subaccount](exercises/ex0/README.md#optional-get-an-overview-provider-sap-btp-subaccount)
+
 - [Exercise 1 - Provision Your Multi-tenant Solution to Your Customer](exercises/ex1/README.md)
     - [Exercise 1.1 - Subscribe the Solution in the Application Subscription of Your Customer](exercises/ex1#exercise-11---subscribe-the-solution-in-the-application-subscription-of-your-customer)
     - [Exercise 1.2 - Configure SAP Build Work Zone](exercises/ex1#exercise-12---configure-sap-build-work-zone)
     - [Exercise 1.3 - Configure the Connection to SAP S/4HANA Cloud Public Edition](exercises/ex1#exercise-13---configure-the-connection-to-sap-s4hana-cloud-public-edition)
+
 - [Exercise 2 - Build and Deploy a Tenant Extension for Your Customer](exercises/ex2/README.md)
     - [Exercise 2.1 - Extend the Persistence and the User Interface With Custom Fields](exercises/ex2#exercise-21---extend-the-persistence-and-the-user-interface-with-custom-fields)
     - [Exercise 2.2 - Develop a Fiori UI to Manage the Customer Entity](exercises/ex2#exercise-22---develop-a-fiori-ui-to-manage-the-customer-entity)
     - [Test the Extension](exercises/ex2/README.md#test-the-extension)
+    
 - [Exercise 3 (optional) - Personalize the User Interface for All Users of Your Customer](exercises/ex3/)
 
 
