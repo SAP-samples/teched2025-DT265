@@ -1,4 +1,4 @@
-# DT265 - Provision and extend multitenant solutions for SAP Cloud ERP
+# DT265 - Provision and Extend Multi-tenant Solutions for SAP Cloud ERP
 
 ## Description
 
@@ -13,7 +13,7 @@ Multi-tenant side-by-side extensions based on the SAP BTP empower partners and c
 Imaging you are working for "SLAM-Tech Solutions", an SAP Build partner with focus on speed, impact and bold execution in the tech space. SLAM-Tech Solutions offers a SaaS solution that extends SAP Cloud ERP with 40 new customers that need to be onboarded quickly. 
 As participant of this hands-on session you serve one of those 40 customers and it will be your job to onboard your customer incl. provisioning a tenant, configuring the connection to Cloud ERP, and enhance to the standard solution fulfilling the wish list of your customer.
 
-> Note: This session is done on basis of the [Partner Reference Application](https://github.com/SAP-samples/partner-reference-application).
+> Note: This session is done on basis of the [Partner Reference Application](https://github.com/SAP-samples/partner-reference-application) and the [Partner Reference Application Extension](https://github.com/SAP-samples/partner-reference-application-extension).
 
 ## Requirements
 
@@ -28,24 +28,26 @@ The requirements to follow the exercises in this repository are:
 ## Exercises
 
 - [Getting Started](exercises/ex0/README.md)
-    - [Get an Overview of the SAP BTP Subaccount of your Customer](exercises/ex0/README.md#sap-btp-subaccount-of-your-customer)
-    - [Configure the Development Environment](exercises/ex0/README.md#development-environment)
-    - [Get an Overview Provider SAP BTP Subaccount](exercises/ex0/README.md#optional-provider-sap-btp-subaccount)
+    - [Get an Overview of the SAP BTP Subaccount of your Customer](exercises/ex0/README.md#get-an-overview-of-the-sap-btp-subaccount-of-your-customer)
+    - [Configure the Development Environment](exercises/ex0/README.md#configure-the-development-environment)
+    - [Get an Overview Provider SAP BTP Subaccount](exercises/ex0/README.md#optional-get-an-overview-provider-sap-btp-subaccount)
 - [Exercise 1 - Provision Your Multi-tenant Solution to Your Customer](exercises/ex1/README.md)
     - [Exercise 1.1 - Subscribe the Solution in the Application Subscription of Your Customer](exercises/ex1#exercise-11---subscribe-the-solution-in-the-application-subscription-of-your-customer)
     - [Exercise 1.2 - Configure SAP Build Work Zone](exercises/ex1#exercise-12---configure-sap-build-work-zone)
     - [Exercise 1.3 - Configure the Connection to SAP S/4HANA Cloud Public Edition](exercises/ex1#exercise-13---configure-the-connection-to-sap-s4hana-cloud-public-edition)
 - [Exercise 2 - Build and Deploy a Tenant Extension for Your Customer](exercises/ex2/README.md)
-    - [Exercise 2.1 - Extend the Persistence and the User Interface With Custom Fields](exercises/ex2#exercise-21-sub-exercise-1-description)
-    - [Exercise 2.2 - Develop a Fiori UI to Manage the Customer Entity](exercises/ex2#exercise-22-sub-exercise-2-description)
-- [Exercise 3 - Test the Application Subscription Including the Integration with Cloud ERP and the Customer-Specific Extension](exercises/ex4/)
-- [Exercise 4 (optional) - Personalize the User Interface for All Users of Your Customer](exercises/ex4/)
+    - [Exercise 2.1 - Extend the Persistence and the User Interface With Custom Fields](exercises/ex2#exercise-21---extend-the-persistence-and-the-user-interface-with-custom-fields)
+    - [Exercise 2.2 - Develop a Fiori UI to Manage the Customer Entity](exercises/ex2#exercise-22---develop-a-fiori-ui-to-manage-the-customer-entity)
+    - [Test the Extension](exercises/ex2/README.md#test-the-extension)
+- [Exercise 3 (optional) - Personalize the User Interface for All Users of Your Customer](exercises/ex3/)
 
 
 ## Contributing
+
 Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) to understand the contribution guidelines.
 
 ## Code of Conduct
+
 Please read the [SAP Open Source Code of Conduct](https://github.com/SAP-samples/.github/blob/main/CODE_OF_CONDUCT.md).
 
 ## How to obtain support
@@ -53,4 +55,5 @@ Please read the [SAP Open Source Code of Conduct](https://github.com/SAP-samples
 Support for the content in this repository is available during the actual time of the online session for which this content has been designed. Otherwise, you may request support via the [Issues](../../issues) tab.
 
 ## License
+
 Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
