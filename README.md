@@ -1,4 +1,4 @@
-# DT265 - Provision and extend multitenant solutions for SAP Cloud ERP
+# DT265 - Provision and Extend Multi-tenant Solutions for SAP Cloud ERP
 
 ## Description
 
@@ -13,7 +13,7 @@ Multi-tenant side-by-side extensions based on the SAP BTP empower partners and c
 Imaging you are working for "SLAM-Tech Solutions", an SAP Build partner with focus on speed, impact and bold execution in the tech space. SLAM-Tech Solutions offers a SaaS solution that extends SAP Cloud ERP with 40 new customers that need to be onboarded quickly. 
 As participant of this hands-on session you serve one of those 40 customers and it will be your job to onboard your customer incl. provisioning a tenant, configuring the connection to Cloud ERP, and enhance to the standard solution fulfilling the wish list of your customer.
 
-> Note: This session is done on basis of the [Partner Reference Application](https://github.com/SAP-samples/partner-reference-application).
+> Note: This session is done on basis of the [Partner Reference Application](https://github.com/SAP-samples/partner-reference-application) and the [Partner Reference Application Extension](https://github.com/SAP-samples/partner-reference-application-extension).
 
 ## Requirements
 
@@ -43,9 +43,11 @@ The requirements to follow the exercises in this repository are:
 
 
 ## Contributing
+
 Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) to understand the contribution guidelines.
 
 ## Code of Conduct
+
 Please read the [SAP Open Source Code of Conduct](https://github.com/SAP-samples/.github/blob/main/CODE_OF_CONDUCT.md).
 
 ## How to obtain support
@@ -53,4 +55,5 @@ Please read the [SAP Open Source Code of Conduct](https://github.com/SAP-samples
 Support for the content in this repository is available during the actual time of the online session for which this content has been designed. Otherwise, you may request support via the [Issues](../../issues) tab.
 
 ## License
+
 Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.

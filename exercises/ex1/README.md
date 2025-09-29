@@ -10,10 +10,6 @@ To provision the application on the subaccount for a specific customer, subscrib
 
 1. In the SAP BTP cockpit of the subaccount of your Customer, navigate to *Instances and Subscriptions*.
 2. Create a subscription to *Poetry Slam Manager* with service plan default. This is the multi-tenant SAP BTP application that is provided in the provider subaccount.
-3. To launch the *Poetry Slam Manager* application, choose *Go to Application* once the application status is *Subscribed*.
-TODO:: wird nur gehen, wenn wir den custom domain service eingerichtet haben!!!!
-
-
 
 ## Exercise 1.2 - Configure SAP Build Work Zone
 
@@ -137,9 +133,7 @@ In this section, three destinations are created to access SAP S/4HANA Cloud ODat
         | *User*:                   | **User Name** of the *Communication User*                                             |
         | *Password*:               | **Password** of the *Communication User*                                              |
 
-@TODO user entfernen und nur eine destination?
-
-3. Create the *s4hc-tech-user* destination to consume SAP S/4HANA Cloud OData services using a technical communication user.
+2. Create the *s4hc-tech-user* destination to consume SAP S/4HANA Cloud OData services using a technical communication user.
 
     In the SAP BTP consumer subaccount, go to *Connectivity* and choose *Destinations* to create a *New Destination* with the following field values:
 
@@ -154,7 +148,7 @@ In this section, three destinations are created to access SAP S/4HANA Cloud ODat
     | *User*:           | **User Name** of the *Communication User*                                             |
     | *Password*:       | **Password** of the *Communication User*                                              |
 
-4. Create the *s4hc-url* destination to launch SAP S/4HANA Cloud Public Edition apps and to store the name of the SAP S/4HANA Cloud Public Edition system used by business users. 
+3. Create the *s4hc-url* destination to launch SAP S/4HANA Cloud Public Edition apps and to store the name of the SAP S/4HANA Cloud Public Edition system used by business users. 
 
     In the SAP BTP consumer subaccount, go to *Connectivity* and choose *Destinations* to create a *New Destination* with the following field values:
 

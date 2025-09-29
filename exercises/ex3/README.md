@@ -20,8 +20,6 @@ After completing these steps, the *Price* will be shown in the *Poetry Slams* ta
 10. Publish the version.
 11. Close the adaptation mode.
 
-TODO: Remove purchase order???
-
 ## Summary
 
 You've now personalized the *Poetry Slam Manager* UI for all users of your customer.
