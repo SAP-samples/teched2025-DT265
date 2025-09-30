@@ -1,6 +1,6 @@
 # Exercise 1 - Provision Your Multi-tenant Solution to Your Customer
 
-In this exercise, you will create provision your multi-tenant solution to the SAP BTP subaccount of your customer.
+In this exercise, you will create a subscription of your multi-tenant solution to the SAP BTP subaccount of your customer.
 
 ## Exercise 1.1 - Subscribe the Solution in the Application Subscription of Your Customer
 
