@@ -32,10 +32,8 @@ After completing these steps you will have an overview about the subscriber SAP 
 2. Navigate to *Services* -> *Instances and Subscriptions*.
 3. View the instances and subscriptions. 
      1. The application subscriptions are:
-          1. Poetry Slam Manager: Subscription of the application. 
-          2. Print Service: Enables the customer to manage print queues.
-          3. SAP Business Application Studio: The development environment used for this demo.
-          4. SAP Build Work Zone, standard edition: Offers a launchpad for your customers to access the Poetry Slam Manager and the Caterer extension.
+          1. Print Service: Enables the customer to manage print queues.
+          2. SAP Business Application Studio: The development environment used for this demo.
      2. The instances are: 
           Access to the print service and to the service broker.
      3. On the environment Cloud Foundry Runtime, the Caterer extension will be deployed.
