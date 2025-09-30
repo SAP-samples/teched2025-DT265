@@ -15,6 +15,16 @@ To provision the application on the subaccount for a specific customer, subscrib
 
 After completing these steps you will have configured SAP Build Work Zone to access the subscribed application *Poetry Slam Manager*. For SAP Build Work Zone, destinations are required to access the provided solution of the provider subaccount. Additional configuration needs to be done to create the launchpad.
 
+### Subscribe to SAP Build Work Zone Application
+
+1. Create a subscription of *SAP Build Work Zone* with
+    - *Service*: *SAP Build Work Zone, standard edition*
+    - *Plan*: *standard (Application)*.
+
+2. In the left navigation pane, open *Security > Users* and add the role collection *Launchpad_Admin* to your user.
+
+> Note: SAP Build Work Zone provides a managed application router that is used to manage application authentication and tokens. 
+
 ### Create Destinations to Access the HTML5 Business Solutions of the Provider Subaccount
 
 The *Poetry Slam Manager* is a content provider and offers content using the common data model. Besides this, it creates destinations to access the provided content. In the customer subaccount, destinations for the design-time and the runtime of the provided content are required, too. Therefore, export the required subaccount destinations from the provider subaccount and import them to the consumer subaccount.
@@ -85,7 +95,7 @@ In this step, you create and review a launchpad site.
 5. Choose the plus behind the *Poetry Slam Manager Role*.
 6. Choose the plus behind the *Poetry Slam Visitor Role*.
 7. Save the changes.
-8. To launch the site, open the *URL* provided in the *Properties* of the *Site Settings*. On the site, you can see no tiles yet. Before being able to see the *Poetry Slams* and *Visitors* tiles, you need to set up the authorizations roles.
+8. To launch the site, open the *URL* provided in the *Properties* of the *Site Settings*. Note the URL of the Poetry Slam Manager launchpad site for later use (**launchpad site URL**). On the site, you can see no tiles yet. Before being able to see the *Poetry Slams* and *Visitors* tiles, you need to set up the authorizations roles. 
 
 #### Configure Authorization Roles 
 
@@ -102,7 +112,7 @@ For each role collection, add the role from the reference application and add yo
 
 ### Test the Poetry Slam Manager with SAP Build Work Zone
 
-Launch the SAP Build Work Zone site with the URL you noted down during the launchpad site creation. Choose the *Manage Poetry Slams* tile. The application comes up.
+Launch the SAP Build Work Zone site with the URL **launchpad site URL** you noted during the launchpad site creation. Choose the *Manage Poetry Slams* tile. The application comes up.
 
 ## Exercise 1.3 - Configure the Connection to SAP S/4HANA Cloud Public Edition
 
@@ -113,7 +123,7 @@ After completing these steps you will have configured the connection to SAP S/4H
 ### Set Up Destinations to Connect the SAP BTP Application to SAP S/4HANA Cloud Public Edition
 
 In this section, three destinations are created to access SAP S/4HANA Cloud OData services:
-- Destination **s4hc** to consume SAP S/4HANA Cloud OData services. In this session, basic authentication is used due to simpler demo use case. In the Partner Reference Application, the setup with principal propagation is described..
+- Destination **s4hc** to consume SAP S/4HANA Cloud OData services. In this session, basic authentication is used due to simpler demo use case. In the Partner Reference Application, the setup uses principal propagation with [OAuth 2.0 SAML Bearer authentication](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/34b-Multi-Tenancy-Provisioning-Connect-S4HC.md#configure-oauth-authentication-for-odata-services). 
 - Destination **s4hc-tech-user** to consume SAP S/4HANA Cloud OData services using a technical basic authentication.
 - Destination **s4hc-url** to provide the SAP S/4HANA Cloud hostname of UI navigations and the name of the SAP S/4HANA Cloud Public Edition system as used by business users.
 

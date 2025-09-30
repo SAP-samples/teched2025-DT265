@@ -1,4 +1,4 @@
-# DT265 - Provision and Extend Multi-tenant Solutions for SAP Cloud ERP
+# DT265 - Provision and Extend Multi-Tenant Solutions Based on CAP for SAP Cloud ERP
 
 ## Description
 
