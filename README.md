@@ -2,15 +2,15 @@
 
 ## Description
 
-This repository contains the material for the SAP TechEd 2025 session called DT265 - Provision and extend multitenant solutions for SAP Cloud ERP.  
+This repository contains the material for the SAP TechEd 2025 session called DT265 - Provision and extend multi-tenant solutions based on CAP for SAP Cloud ERP.  
 
 ## Overview
 
 This session introduces attendees to experience how to provision, configure, and extend multi-tenant solutions for your customers. Using a reference example, you will learn how to deliver customer-specific extensions on a scalable and resource-efficient multi-tenant architecture.
 
-Multi-tenant side-by-side extensions based on the SAP BTP empower partners and customers to innovate on top of Cloud ERP and Cloud ERP Private in a scalable model. Building applications with SAP Build and running solutions on the SAP BTP means you can focus on your application domain and inherit enterprise-class SaaS qualities such as multitenancy, easy customer onboarding, seamless integration with the SAP Business Suite, and out-of-the-box extensibility.
+Multi-tenant side-by-side extensions based on the SAP BTP empower partners and customers to innovate on top of Cloud ERP in a scalable model. Building applications with SAP Build and running solutions on the SAP BTP means you can focus on your application domain and inherit enterprise-class SaaS qualities such as multitenancy, easy customer onboarding, seamless integration with the SAP Business Suite, and out-of-the-box extensibility.
  
-Imaging you are working for "SLAM-Tech Solutions", an SAP Build partner with focus on speed, impact and bold execution in the tech space. SLAM-Tech Solutions offers a SaaS solution that extends SAP Cloud ERP with 40 new customers that need to be onboarded quickly. 
+Imagine you are working for "SLAM-Tech Solutions", an SAP Build partner with focus on speed, impact and bold execution in the tech space. SLAM-Tech Solutions offers a SaaS solution that extends SAP Cloud ERP with 40 new customers that need to be onboarded quickly. 
 As participant of this hands-on session you serve one of those 40 customers and it will be your job to onboard your customer incl. provisioning a tenant, configuring the connection to Cloud ERP, and enhance to the standard solution fulfilling the wish list of your customer.
 
 > Note: This session is done on basis of the [Partner Reference Application](https://github.com/SAP-samples/partner-reference-application) and the [Partner Reference Application Extension](https://github.com/SAP-samples/partner-reference-application-extension).
@@ -22,8 +22,8 @@ The requirements to follow the exercises in this repository are:
 - SAP BTP Global Account
 - SAP Business Application Studio
 - SAP S/4HANA Public Cloud instance
-- Provider Subaccount with the Partner Reference Application provided
-- Subscriber Subaccount for each customer with trust configuration
+- Provider subaccount with the Partner Reference Application provided
+- Subscriber subaccount for each customer with trust configuration
 
 ## Exercises
 
@@ -37,7 +37,7 @@ The requirements to follow the exercises in this repository are:
     - [Exercise 1.2 - Configure SAP Build Work Zone](exercises/ex1#exercise-12---configure-sap-build-work-zone)
     - [Exercise 1.3 - Configure the Connection to SAP S/4HANA Cloud Public Edition](exercises/ex1#exercise-13---configure-the-connection-to-sap-s4hana-cloud-public-edition)
 
-- [Exercise 2 - Build and Deploy a Tenant Extension for Your Customer](exercises/ex2/README.md)
+- [Exercise 2 - Build and Deploy a Customer-Specific Extension](exercises/ex2/README.md)
     - [Exercise 2.1 - Extend the Persistence and the User Interface With Custom Fields](exercises/ex2#exercise-21---extend-the-persistence-and-the-user-interface-with-custom-fields)
     - [Exercise 2.2 - Develop a Fiori UI to Manage the Customer Entity](exercises/ex2#exercise-22---develop-a-fiori-ui-to-manage-the-customer-entity)
     - [Test the Extension](exercises/ex2/README.md#test-the-extension)
