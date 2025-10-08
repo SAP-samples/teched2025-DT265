@@ -72,11 +72,11 @@ The following section explains how to retrieve the model from the running applic
 
    3. In the terminal of your development environment execute the following statement to log into the MTX module.
 
-            ```bash
-            cds login <PROVIDER-MTX-APP-URL> -s <SUBSCRIBER-SUBDOMAIN> -c '<CLIENT-ID>':'<CLIENT-SECRET>' --plain
-            ```
+         ```bash
+         cds login <PROVIDER-MTX-APP-URL> -s <SUBSCRIBER-SUBDOMAIN> -c '<CLIENT-ID>':'<CLIENT-SECRET>' --plain
+         ```
 
-         > Note: Use the subdomain from the subscriber subaccount. You noted it as **customer subdomain**.
+      > Note: Use the subdomain from the subscriber subaccount. You noted it as **customer subdomain**.
 
 2. Pull the latest cds model from the provider subaccount to the extension project `partner-reference-extension-catering`.
 
@@ -317,13 +317,11 @@ In the SAP BTP consumer subaccount, go to *Connectivity* and choose *Destination
 Now that you have completed all the development and configurations, you can proceed to deploy the application.
 
 1. Open a new terminal and navigate into folder `home/user/projects/partner-reference-extension-catering-ui`.
-
 2. Log on to SAP BTP Cloud Foundry runtime:
    1. Run the command `cf login`.
    2. Enter the SAP BTP Cloud Foundry runtime API of your environment, for example, `https://api.cf.eu10.hana.ondemand.com`.
 
       1. In the SAP BTP cockpit of the customer subaccount, navigate to *Overview*.
-
       2. Copy the *API Endpoint* from *Cloud Foundry Environment*.
 
    3. Enter your development user and password.
@@ -331,9 +329,7 @@ Now that you have completed all the development and configurations, you can proc
    5. Select the SAP BTP Cloud Foundry runtime space (*app*).
 
 3. To install the dependencies, run the command `npm run install`.
-
 4. To build the application, run the command `npm run build:mta`.
-
 5. To deploy the application, run the command `npm run deploy`.
 
 ### Configure SAP Build Work Zone
@@ -387,33 +383,22 @@ By assigning the *Everyone* role to your site, you provide authorized users with
 1. Now, let's add a new caterer. Launch the *Caterer* application.
 
     1. Open the SAP Build Work Zone launchpad you created and enhanced with the extension. Use the URL **launchpad site URL** you noted before.
-
     2. Choose the *Caterer* application from the *Application* table.
 
 2. A list of existing caterers is displayed in the table. Choose *Create* and enter the following details:
 
-    1. *Name*: *Goose*
-    
-    2. *Contact Person*: *Peter*
-    
+    1. *Name*: *Goose*   
+    2. *Contact Person*: *Peter* 
     3. *Phone*: *+555-1212*
-    
     4. *Email*: *peter@goosesap.com*
-    
     5. *Cuisine*: *Mexican*
-    
     6. *Maximum Service Capacity*: *300*
 
 3. Choose *Create* to add a new caterer.
-
 4. Switch to the *Poetry Slam Manager* application of your customer.
-
 5. Open *Manage Poetry Slams*.
-
 6. Select a published poetry slams.
-
 7. You can see that the new *Caterer* section is available. Choose *Edit*, select the newly created caterer for your event from the predefined list.
-
 8. The poetry slam is updated with the caterer information. Save your changes.
 
 ## Summary

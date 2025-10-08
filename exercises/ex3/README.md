@@ -23,6 +23,3 @@ After completing these steps, the *Price* will be shown in the *Poetry Slams* ta
 ## Summary
 
 You've now personalized the *Poetry Slam Manager* UI for all users of your customer.
-
-
-
