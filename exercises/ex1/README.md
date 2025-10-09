@@ -111,84 +111,18 @@ Authorization changes are not directly taken into account. The user needs to re-
 
 > Note: The trust configuration is already setup. In case you want to learn more about the preconditions to use the identity authentication service, check the chapter [Configure Authentication and Authorization](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/25-Multi-Tenancy-Provisioning.md#configure-authentication-and-authorization) of the Partner Reference Application.
 
-### Test the *Poetry Slam Manager* with SAP Build Work Zone
+### Test the Poetry Slam Manager with SAP Build Work Zone and the Integration with SAP S/4HANA Public Cloud
+
+ Your customer can access *Poetry Slam Manager* with the SAP Build Work Zone launchpad. They use SAP S/4HANA Public Cloud projects to plan and staff events, to collect costs, and to purchase required equipments. Therefore, the *Poetry Slam Manager* is connected to the SAP S/4HANA Public Cloud projects to plan the event. To test this integration follow these steps:
 
 1. Launch the SAP Build Work Zone site with the URL **launchpad site URL**, you noted during the launchpad site creation. 
 2. Choose the *Manage Poetry Slams* tile. The application comes up and shows an empty list page.
-
-## Exercise 1.3 - Configure the Connection to SAP S/4HANA Cloud Public Edition
-
-After completing these steps you will have configured the connection to SAP S/4HANA Cloud Public Edition. The *Poetry Slam Manager* integrates SAP S/4HANA Cloud Public Edition to plan and staff poetry slam events, to collect costs, and to purchase required equipments. 
-
-> Note: The configuration in the SAP S/4HANA Cloud Public Edition instance is already setup. In case you want to learn more about the setup, check the chapter [Configure the Integration with SAP S/4HANA Cloud Public Edition](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/34b-Multi-Tenancy-Provisioning-Connect-S4HC.md) of the Partner Reference Application.
-
-### Set Up Destinations to Connect the SAP BTP Application to SAP S/4HANA Cloud Public Edition
-
-In this section, three destinations are created to access SAP S/4HANA Cloud OData services:
-- Destination **s4hc** to consume SAP S/4HANA Cloud OData services with principal propagation. In this session, basic authentication is used due to simpler demo use case. In the Partner Reference Application, the setup uses principal propagation with [OAuth 2.0 SAML Bearer authentication](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/34b-Multi-Tenancy-Provisioning-Connect-S4HC.md#configure-oauth-authentication-for-odata-services). 
-- Destination **s4hc-tech-user** to consume SAP S/4HANA Cloud OData services using a technical basic authentication.
-- Destination **s4hc-url** to provide the SAP S/4HANA Cloud hostname of UI navigations and the name of the SAP S/4HANA Cloud Public Edition system as used by business users.
-
-1. In the SAP BTP customer subaccount, you can create the destination *s4hc* to consume SAP S/4HANA Cloud OData services. 
-    1. Go to *Connectivity* in the SAP BTP consumer subaccount.
-    2. Choose *Destinations*.
-    3. Create a *New Destination* with the following field values:
-
-        | Parameter Name            | Value                                                                                         |
-        | :------------------------ | :-------------------------------------------------------------------------------------------- |
-        | *Name*:                   | *s4hc*                                                                                        |
-        | *Type*:                   | *HTTP*                                                                                        |
-        | *Description*:            | Destination description (For example, `SAP S/4HANA Cloud XXXXXX with principal propagation`)  |
-        | *URL*:                    | **API-URL** of the *Communication Arrangement*                                        |
-        | *Proxy Type*:             | *Internet*                                                                            |
-        | *Authentication*:         | *BasicAuthentication*                                                                 |
-        | *User*:                   | **User Name** of the *Communication User*                                             |
-        | *Password*:               | **Password** of the *Communication User*                                              |
-
-2. Create the *s4hc-tech-user* destination to consume SAP S/4HANA Cloud OData services using a technical communication user.
-
-    In the SAP BTP consumer subaccount, go to *Connectivity* and choose *Destinations* to create a *New Destination* with the following field values:
-
-    | Parameter Name    | Value                                                                                 |
-    | :---------------- | :------------------------------------------------------------------------------------ |
-    | *Name*:           | *s4hc-tech-user*                                                                      |
-    | *Type*:           | *HTTP*                                                                                |
-    | *Description*:    | Destination description (For example, `SAP S/4HANA Cloud XXXXXX with technical user`) |
-    | *URL*:            | **API-URL** of the *Communication Arrangement*                                        |
-    | *Proxy Type*:     | *Internet*                                                                            |
-    | *Authentication*: | *BasicAuthentication*                                                                 |
-    | *User*:           | **User Name** of the *Communication User*                                             |
-    | *Password*:       | **Password** of the *Communication User*                                              |
-
-3. Create the *s4hc-url* destination to launch SAP S/4HANA Cloud Public Edition apps and to store the name of the SAP S/4HANA Cloud Public Edition system used by business users. 
-
-    In the SAP BTP consumer subaccount, go to *Connectivity* and choose *Destinations* to create a *New Destination* with the following field values:
-
-    | Parameter Name    | Value                                                                                             |
-    | :---------------- | :------------------------------------------------------------------------------------------------ |
-    | *Name*:           | *s4hc-url*                                                                                        |
-    | *Type*:           | *HTTP*                                                                                            |
-    | *Description*:    | Destination description (For example, `SAP S/4HANA Cloud XXXXXX`)                                 |
-    | *URL*:            | UI endpoint of the SAP S/4HANA Cloud Public Edition system (For example, `https://myXXXXXX.s4hana.ondemand.com`) |
-    | *Proxy Type*:     | *Internet*                                                                                        |
-    | *Authentication*: | *NoAuthentication*                                                                                |
-
-
-### Test the Integration of the *Poetry Slam Manager* with SAP S/4HANA Public Cloud
-
- Your customer uses SAP S/4HANA Public Cloud projects to plan and staff events, to collect costs, and to purchase required equipments. Therefore, the *Poetry Slam Manager* is connected to the SAP S/4HANA Public Cloud projects to plan the event. To test this integration follow these steps:
-
-1. Open the *Poetry Slam Manager* application of your customer with SAP Build Work Zone.
-
-2. In the Poetry Slams application, an empty list is displayed.
-
 3. To create sample data for mutable data, such as poetry slams, visitors, and visits, choose *Generate Sample Data*. As a result, multiple poetry slams are listed: Some are still in preparation and have not been released yet while others are already published. 
+
     > Note: If you choose *Generate Sample Data* again, the sample data is set to the default values.
 
 4. To view the details of a poetry slam, choose one that is neither canceled nor in draft mode. 
-
 5. Choose *Create Project in SAP S/4HANA Public Cloud*. As a result, the system creates a project in SAP S/4HANA Public Cloud based on a project template.
-
 6. After creating the project, you can see the project details in the *Project Data* section. The project ID is displayed as a link. To go to the project overview, click the project ID.
 
 ## Summary

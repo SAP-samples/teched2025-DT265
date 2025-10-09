@@ -54,6 +54,9 @@ After completing these steps you will have an overview about the subscriber SAP 
 5. Navigate to *Destinations*.
 6. View the existing destinations.
      1. print-service: Adds the application to manage print queues to SAP Build Work Zone.
+     2. s4hc: Consumes SAP S/4HANA Cloud OData services with principal propagation. In this session, basic authentication is used due to simpler demo use case. In the Partner Reference Application, the setup uses principal propagation with [OAuth 2.0 SAML Bearer authentication](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/34b-Multi-Tenancy-Provisioning-Connect-S4HC.md#configure-oauth-authentication-for-odata-services). 
+     3. s4hc-tech-user: Consumes SAP S/4HANA Cloud OData services using a technical basic authentication.
+     4. s4hc-url: Provides the SAP S/4HANA Cloud hostname for UI navigations and the name of the SAP S/4HANA Cloud Public Edition system as used by business users.
 
 ## Configure the Development Environment
 
