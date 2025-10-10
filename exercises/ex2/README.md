@@ -208,9 +208,9 @@ You consume the metadata of the *Poetry Slams* OData service from the customer s
 1. Create a folder (e.g. *partner-reference-extension-catering-ui*) in your workspace in SAP Business Application Studio. The path should be *home/user/projects-folder/partner-reference-extension-catering-ui*.
    
    1. Open a new terminal in SAP Business Application Studio.
-   2. The terminal should show the folder *partner-reference-extension-catering*, navigate to projects by using command `cd ..`. 
-   3. Run command `mkdir partner-reference-extension-catering-ui`.
-   4. Navigate to the new folder in the terminal `cd partner-reference-extension-catering-ui`. 
+   2. The terminal should show the folder *partner-reference-extension-catering*, navigate to *projects* folder by using command `cd ..`. 
+   3. Run command `mkdir partner-reference-extension-catering-ui` to create a new folder.
+   4. Navigate to the new folder in the terminal by command `cd partner-reference-extension-catering-ui`. 
    5. Add the folder to your workspace by clicking to the sandwich button on the top left corner and select *File*->*Add Folder to Workspace...*.
    6. Select the newly created folder *partner-reference-extension-catering-ui*.
    
