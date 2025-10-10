@@ -16,47 +16,6 @@ To provision the application on the subaccount for a specific customer, subscrib
 
 After completing these steps you will have configured SAP Build Work Zone to access the subscribed application *Poetry Slam Manager*. For SAP Build Work Zone, destinations are required to access the provided solution of the provider subaccount. Additional configuration needs to be done to create the launchpad.
 
-### Subscribe to SAP Build Work Zone Application
-
-1. Create a subscription of *SAP Build Work Zone* with
-    - *Service*: *SAP Build Work Zone, standard edition*
-    - *Plan*: *standard (Application)*.
-
-2. As soon as the subscription is succesful, open *Security > Users* In the left navigation pane, 
-
-3. Add the role collection *Launchpad_Admin* to your user.
-
-### Create Destinations to Access the HTML5 Business Solutions of the Provider Subaccount
-
-The *Poetry Slam Manager* is a content provider and offers content using the common data model. Besides this, it creates destinations to access the provided content. In the customer subaccount, destinations for the design-time and the runtime of the provided content are required, too. Therefore, export the required subaccount destinations from the provider subaccount and import them to the consumer subaccount.
-
-1. Export the destinations from the provider subaccount.
-
-	1. Open the SAP BTP cockpit of the provider subaccount.
-	2. Navigate to the *Destinations* view.
-	3. Select the *poetry-slams-cdm* destination and export it. A *poetry-slams-cdm* file is stored on your computer.
-	4. Select the *poetry-slams-rt* destination and export it. A *poetry-slams-rt* file is stored on your computer.
-	5. Do not close the provider cockpit, as you'll need it for the next steps.
-
-2. Import the destinations in your customer subaccount.
-	1. Open the SAP BTP cockpit of your customer.
-	2. Navigate to the *Destinations* view.
-	3. Import the *poetry-slams-cdm* destination using the downloaded file. The values of the destination are taken over. The value of the *Client Secret* property can't be exported but you can get it as follows:
-
-		1. In a new browser window, navigate to *Instances and Subscriptions* of the provider subaccount.
-		2. Select the *poetry-slams-html5-runtime* service instance in the table.
-		3. Choose *View Credentials* at the top right corner of the screen.
-		4. From the credentials file that opens, copy the value of the *clientsecret*.
-    
-    4. Add the value you just copied to the *Client Secret* property of the destination *poetry-slams-cdm*.
-    5. Edit the *poetry-slams-cdm* destination.
-    6. Remove the *-004* from the host part of the *URL*
-    7. Import the *poetry-slams-rt* destination using the downloaded file.
-	8. Replace the URL with `https://<customer account subdomain>.launchpad.cfapps.eu10.hana.ondemand.com`. You can get the subdomain from the subscriber subaccount as follows:
-
-        1. In the SAP BTP cockpit of the subscriber subaccount, navigate to *Overview*.
-        2. Copy the *Subdomain* from the *General* section and note it as **customer subdomain**. You will require it in later steps again. 
-
 ### Configure SAP Build Work Zone
 
 Since the web application and the destinations for the provided content are available, it's ready to be added to SAP Build Work Zone.
@@ -90,9 +49,9 @@ In this step, you create and review a launchpad site.
 2. Create a site and enter a site name, for example, *Partner Reference Application*.
 3. Open the *Role Assignments* area on the left side of the screen.
 4. Edit the role assignments.
-5. Click into the search field. The **Poetry Slam Manager* Role* should show up as a result.
-6. Choose the plus behind the **Poetry Slam Manager* Role*.
-7. Choose the plus behind the *Poetry Slam Visitor Role*.
+5. Click into the search field. The *Poetry Slam Manager Role* should show up as a result.
+6. Enable the assignment status of the role *Poetry Slam Manager Role*.
+7. Enable the assignment status of the role *Poetry Slam Visitor Role*.
 8. Save the changes.
 9. To launch the site, open the *URL* provided in the *Properties* of the *Site Settings*. Note the URL of the *Poetry Slam Manager* launchpad site for later use (**launchpad site URL**). On the site, you can see no tiles yet. Before being able to see the *Poetry Slams* and *Visitors* tiles, you need to set up the authorizations roles. 
 
@@ -104,8 +63,8 @@ For each role collection, add the role from the Partner Reference Application an
 
 | Role Collection                    				| Role		  			| User ID         					| User Identity Provider         	|
 | :---                               				| :---					| :---			       				| :---			       				|
-| `~poetry_slam_manager_poetrySlamManagerRole` 		| PoetrySlamManagerRole | `DT265-0XX@education.cloud.sap`	| Custom IAS tenant					|
-| `~poetry_slam_manager_poetrySlamVisitorRole`		| PoetrySlamVisitorRole | `DT265-0XX@education.cloud.sap`  	| Custom IAS tenant					|
+| `~poetry_slam_manager_poetrySlamManagerRole` 		| PoetrySlamManagerRole | `DT265-0*nn*@education.cloud.sap`	| Custom IAS tenant					|
+| `~poetry_slam_manager_poetrySlamVisitorRole`		| PoetrySlamVisitorRole | `DT265-0*nn*@education.cloud.sap` | Custom IAS tenant					|
 
 Authorization changes are not directly taken into account. The user needs to re-login. Therefore, log off from the SAP BTP subaccount and login again.
 
@@ -113,10 +72,10 @@ Authorization changes are not directly taken into account. The user needs to re-
 
 ### Test the Poetry Slam Manager with SAP Build Work Zone and the Integration with SAP S/4HANA Public Cloud
 
- Your customer can access *Poetry Slam Manager* with the SAP Build Work Zone launchpad. They use SAP S/4HANA Public Cloud projects to plan and staff events, to collect costs, and to purchase required equipments. Therefore, the *Poetry Slam Manager* is connected to the SAP S/4HANA Public Cloud projects to plan the event. To test this integration follow these steps:
+Your customer can access *Poetry Slam Manager* with the SAP Build Work Zone launchpad. They use SAP S/4HANA Public Cloud projects to plan and staff events, to collect costs, and to purchase required equipments. Therefore, the *Poetry Slam Manager* is connected to the SAP S/4HANA Public Cloud projects to plan the event. To test this integration follow these steps:
 
 1. Launch the SAP Build Work Zone site with the URL **launchpad site URL**, you noted during the launchpad site creation. 
-2. Choose the *Manage Poetry Slams* tile. The application comes up and shows an empty list page.
+2. Choose the *Poetry Slam Events* tile. The application comes up and shows an empty list page.
 3. To create sample data for mutable data, such as poetry slams, visitors, and visits, choose *Generate Sample Data*. As a result, multiple poetry slams are listed: Some are still in preparation and have not been released yet while others are already published. 
 
     > Note: If you choose *Generate Sample Data* again, the sample data is set to the default values.

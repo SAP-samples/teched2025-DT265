@@ -150,6 +150,8 @@ It is not mandatory to split the extension model into multiple files; however, f
     2. Copy the following content into the newly created file. 
 
         ```cds
+        using { x_sap.samples.poetryslams.catering.x_Caterers as caterers } from '../db/catererManager';
+
         // Extend the PoetrySlamService of the base application with the X_Caterers entity.
         extend service PoetrySlamService with{
             entity x_Caterers as projection on caterers;
@@ -195,7 +197,7 @@ With that a new `Caterer` section is introduced in the *Poetry Slam Manager* app
 
 ## Exercise 2.2 - Develop a Fiori UI to Manage the Customer Entity
 
-After completing these steps you will have created a Fiori Elements app for managing caterer for the poetry slam events.
+After completing these steps you have created a Fiori Elements app to manage caterer for the poetry slam events.
 
 > Note: The SAP BTP Cloud Foundry runtime environment is required in the subaccount of your customer, as the web application will be deployed to manage caterer information. In this demo, it is already enabled. For more details beyond this excercise, refer to the [Partner Reference Application Tutorial - Enable SAP BTP Cloud Foundry Runtime](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/22-Multi-Tenancy-Prepare-Deployment.md#enable-sap-btp-cloud-foundry-runtime).
 
@@ -203,47 +205,59 @@ After completing these steps you will have created a Fiori Elements app for mana
 
 You consume the metadata of the *Poetry Slams* OData service from the customer subaccount, where the backend is independently managed. This metadata is then utilized to create the Fiori Elements project. To obtain the metadata, follow the steps outlined below:
 
-1. Open an new web browser tab.
-2. Enable the *Developer Tools*.
+1. Create a folder (e.g. *partner-reference-extension-catering-ui*) in your workspace in SAP Business Application Studio. The path should be *home/user/projects-folder/partner-reference-extension-catering-ui*.
+   
+   1. Open a new terminal in SAP Business Application Studio.
+   2. Ensure that the terminal shows folder *projects*. In case, it shows *partner-reference-extension-catering*, navigate to projects by using command `cd ..`. 
+   3. Run command `mkdir partner-reference-extension-catering-ui`.
+   4. Add the folder to your workspace by clicking to the sandwich button on the top left corner and select *Add Folder to Workspace...*.
+   5. Select the newly created folder *partner-reference-extension-catering-ui*.
+   
+   Your project structure should look like this:
+   <br><img src="images/FolderStructure.png" alt="folder structure">
+
+   
+2. Create a new file (e.g. *PoetrySlamService.edmx*) paste the metadata.
+3. Open an new web browser tab.
+4. Paste the application URL **launchpad site URL** into the browser's address bar and press *Enter*.
+5. Enable the *Developer Tools*.
 
     > Note: You can enable *Developer Tools* in *Google Chrome* using a keyboard shortcut:
     >
     > 1. Windows/Linux: Press `Ctrl + Shift + I` or `F12`.  
     > 2. Mac: Press `Cmd + Option + I`.
 
-3. Paste the application URL **launchpad site URL** into the browser's address bar and press *Enter*.
-4. In the *Network* tab's filter bar, type `metadata` to filter the requests related to the metadata.
-5. Copy the response of the metadata API call.
-6. Create a folder (e.g. *partner-reference-extension-catering-ui*) in your workspace in SAP Business Application Studio.
-7. Create a new file (e.g. PoetrySlamService.edmx) paste the metadata.
+6. Navigate into the *Poetry Slam Events* application.
+7. In the *Network* tab's filter bar, type `metadata` to filter the requests related to the metadata.
+8. Copy the response of the metadata API call.
 
 ### Add a Web Application with SAP Fiori Elements
 
 You create the Fiori Elements project by uploading the metadata using the *SAP Fiori Elements Application Wizard* under *partner-reference-extension-catering-ui* folder.
 
-1. Create a new folder called `partner-reference-extension-catering-ui` in your workspace. The path should be `home/user/projects-folder/partner-reference-extension-catering-ui`.
-2. To start a new development project, go to the settings in SAP Business Application Studio from your subscriber subaccount and open the Command Palette.
-3. To start the wizard, search for *SAP Business Application Studio: New Project from Template* in the *Command Palette...*.
-4. Select the *SAP Fiori Generator* module template and then click on *Start*. 
-5. Choose *List Report Page*. and click on *Next*.
-6. Select the data source and the OData service as follows:
+1. To start a new development project, go to the settings in SAP Business Application Studio from your subscriber subaccount and open the Command Palette.
+2. To start the wizard, search for *SAP Business Application Studio: New Project from Template* in the *Command Palette...*.
+3. Select the *SAP Fiori Generator* module template and then click on *Start*. 
+4. Choose *List Report Page*. and click on *Next*.
+5. Select the data source and the OData service as follows:
    - *Data source*: *Upload a Metadata Document*
    - *Metadata file path*: *Upload the metadata file created in the previous section*
-7. Select the main entity from the list:
+6. Select the main entity from the list:
    - *Main entity*: *x_Caterers*
    - *Automatically add table columns*: *Yes*
    - *Table Type*: *Responsive*
-8. Add further project attributes. For not listed attributes, use the default:
+7. Add further project attributes. For not listed attributes, use the default:
    - *Module name*: *caterer*
    - *Application title*: *Caterers*
    - *Application namespace*: leave empty
    - *Description*: *Application to create and manage caterers*
    - *Project folder path*: *Choose the project folder*. Make sure the target folder path is set to `home/user/projects/partner-reference-extension-catering-ui`.
-9. Select the deployment configuration:
+   - *Add deployment configuration*: Yes
+8. Select the deployment configuration:
    - *Please choose the target*: *Cloud Foundry*
    - *Destination name*: *none*
    - *Add application to managed application router*: *Yes*
-10. Choose *Finish*. The wizard creates the *caterer* folder, which contains all files related to the user interface.
+9. Choose *Finish*. The wizard creates the *caterer* folder, which contains all files related to the user interface.
 
 ### Fine-Tune the User Interface
 
@@ -284,7 +298,7 @@ To access the *Poetry Slams* OData services from your SAP Fiori application, the
 
 ### Create the Destination to Access the Base Application
 
-You need to create a destination in the subscriber subaccount to connect to the *Poetry Slams* OData service using the service broker instance. This destination was configured in the [xs-app.json](https://github.com/SAP-samples/partner-reference-application-extension/blob/main/partner-reference-extension-catering-ui/PoetrySlamService.edmx)-file to enable tenant-specific data calls in an earlier step.
+You need to create a destination in the subscriber subaccount to connect to the *Poetry Slams* OData service using the service broker instance. This destination was configured in the [xs-app.json](https://github.com/SAP-samples/partner-reference-application-extension/blob/main/partner-reference-extension-catering-ui/PoetrySlamService.edmx) file to enable tenant-specific data calls in an earlier step.
 
 In the SAP BTP consumer subaccount, go to *Connectivity* and choose *Destinations* to create a *New Destination* with the following field values:
 
@@ -298,7 +312,7 @@ In the SAP BTP consumer subaccount, go to *Connectivity* and choose *Destination
 | *Authentication*  | *OAuth2UserTokenExchange*                                                                         |
 | *Client Id*       | Get the client id from the service key of the service broker instance created in the subscriber subaccount. *Check the details below*                                                                        |
 | *Client secret*   | Get the client secret from the service key of the service broker instance created in the subscriber subaccount. *Check the details below.*                                                                        |
-| *Token Service URL*:      | `https://<SUBSCRIBER-SUBDOMAIN>.authentication.eu12.hana.ondemand.com/oauth/token` *Check the details below*       |
+| *Token Service URL*:      | `https://<SUBSCRIBER-SUBDOMAIN>.authentication.eu10.hana.ondemand.com/oauth/token` *Check the details below*       |
 | *Token Service URL Type*: | *Dedicated*                                                                               |
 
 - *URL*: Get the URL of the application service from the provider subaccount:
@@ -316,21 +330,22 @@ In the SAP BTP consumer subaccount, go to *Connectivity* and choose *Destination
 
 Now that you have completed all the development and configurations, you can proceed to deploy the application.
 
-1. Open a new terminal and navigate into folder `home/user/projects/partner-reference-extension-catering-ui`.
+1. In the SAP Business Application Studio, open a new terminal and navigate into folder `home/user/projects/partner-reference-extension-catering-ui`.
 2. Log on to SAP BTP Cloud Foundry runtime:
-   1. Run the command `cf login`.
-   2. Enter the SAP BTP Cloud Foundry runtime API of your environment, for example, `https://api.cf.eu10.hana.ondemand.com`.
+   1. Run the command: 
+      
+      ```
+      cf login -a https://api.cf.eu10-004.hana.ondemand.com --origin teched01-platform
+      ```
 
-      1. In the SAP BTP cockpit of the customer subaccount, navigate to *Overview*.
-      2. Copy the *API Endpoint* from *Cloud Foundry Environment*.
+   2. Enter your development user and password.
+   3. Select the org of the SAP BTP customer subaccount for the application (*dt2650nn*). Replace nn with the number of your customer.
+   4. Select the SAP BTP Cloud Foundry runtime space of your customer (*DT265*).
 
-   3. Enter your development user and password.
-   4. Select the org of the SAP BTP customer subaccount for the application.
-   5. Select the SAP BTP Cloud Foundry runtime space (*app*).
-
-3. To install the dependencies, run the command `npm run install`.
-4. To build the application, run the command `npm run build:mta`.
-5. To deploy the application, run the command `npm run deploy`.
+3. Navigate into the *caterer* folder with command `cd caterer`.
+4. To install the dependencies, run the command `npm install`.
+5. To build the application, run the command `npm run build:mta`.
+6. To deploy the application, run the command `npm run deploy`.
 
 ### Configure SAP Build Work Zone
 
@@ -351,7 +366,7 @@ The *Content Manager* is the central place to manage applications, roles, and gr
 
 #### Assign the Application to a Role
 
-Role assignments define who can access and interact with an application within the launchpad. By assigning the application to the *Everyone* role (or any specific role based on business needs), you ensure that authorized users can see and use the application.
+Role assignments define who can access and interact with an application within the launchpad. By assigning the application to the *Everyone* role (or any specific role based on business needs), you ensure that authorized users can see and use the application. The *Everyone* role is assigned to a site by default.
 
 1. Open the *Content Manager*.
 2. Choose the *Everyone* role (available by default).
@@ -364,18 +379,8 @@ Creating a Group allows you to categorize applications based on functionality, u
 
 1. Open the *Content Manager*.
 2. Create a new *Group*.
-3. Enter a *Title* and *Description* for better organization.
+3. Enter a *Title* (e.g. `Caterer`) and *Description* (e.g. `Maintain caterer`) for better organization.
 4. Add the *Caterer* application to the newly created group.
-5. Save your changes.
-
-#### Configure Role Assignments in Site Settings
-
-By assigning the *Everyone* role to your site, you provide authorized users with the necessary permissions to access the launchpad, navigate through available applications, and use the applications seamlessly.
-
-1. Navigate to the *Site Directory*.
-2. Open *Site Settings*.
-3. Go to *Role Assignments*.
-4. Assign the *Everyone* role.
 5. Save your changes.
 
 ## Test the Extension
@@ -406,4 +411,3 @@ By assigning the *Everyone* role to your site, you provide authorized users with
 You've now extended the *Poetry Slam Manager* subscription of your customer with the *Caterer* extension.
 
 Continue to [Personalize the User Interface for All Users of Your Customer](../ex3/README.md)
-
