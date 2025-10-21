@@ -46,7 +46,7 @@ First, create an extension project, which is a standard SAP Cloud Application Pr
 
 To extend the base model, assign the `PoetrySlamExtensionDeveloperRoleCollection` role collection to your user in the customer subaccount. 
 
-> Note: The `PoetrySlamExtensionDeveloperRoleCollection` role collection is established within the base model as part of the extension enablement process. For more details beyond this excercise, refer to [Partner Reference Application Tutorial - *Poetry Slam Manager* Application with extensibility](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/50-Multi-Tenancy-Features-Tenant-Extensibility.md#application-enablement).
+> Note: The `PoetrySlamExtensionDeveloperRoleCollection` role collection is established within the base model as part of the extension enablement process. For more details beyond this exercise, refer to [Partner Reference Application Tutorial - *Poetry Slam Manager* Application with extensibility](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/50-Multi-Tenancy-Features-Tenant-Extensibility.md#application-enablement).
 
 ### Pull the Base Model
 
@@ -102,7 +102,7 @@ It is not mandatory to split the extension model into multiple files; however, f
 
     2. Copy the following content into the newly created file.
 
-      ```javascript
+      ```cds
       namespace  x_sap.samples.poetryslams.catering;
       using {sap.samples.poetryslams.PoetrySlams, cuid, managed,sap } from 'partner-reference-application';
 
@@ -139,9 +139,9 @@ It is not mandatory to split the extension model into multiple files; however, f
       } ;
       ```
 
-      > Note: By using the `extend` directive, you can add new fields to existing entities, create new entities, and further more. Details beyond this excercise can be found in chapter [Extending the Data Model](https://cap.cloud.sap/docs/guides/extensibility/customization#extending-the-data-model) of the capire docmentation.
+      > Note: By using the `extend` directive, you can add new fields to existing entities, create new entities, and further more. Details beyond this exercise can be found in chapter [Extending the Data Model](https://cap.cloud.sap/docs/guides/extensibility/customization#extending-the-data-model) of the capire docmentation.
        
-      > Note: For more information beyond this excercise on how the prefix `x_` is defined in the base application, have a look at the chapter [Partner Reference Application Tutorial - Poetry Slam Manager Application with extensibility](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/50-Multi-Tenancy-Features-Tenant-Extensibility.md#application-enablement).
+      > Note: For more information beyond this exercise on how the prefix `x_` is defined in the base application, have a look at the chapter [Partner Reference Application Tutorial - Poetry Slam Manager Application with extensibility](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/50-Multi-Tenancy-Features-Tenant-Extensibility.md#application-enablement).
 
 2. Extending the service model. You will enhance the existing service of the base application. The newly created entities of the data model are automatically included as they serve as targets for the corresponding compositions. Additionally, these new entities are automatically exposed in a read-only manner. You can explicitly expose them as writable, too.
 
@@ -165,7 +165,7 @@ It is not mandatory to split the extension model into multiple files; however, f
    3. Create new file called i18n.properties to a new i18n-folder to support translation.
    4. Copy the content of the [i18n.properties](https://github.com/SAP-samples/partner-reference-application-extension/blob/main/partner-reference-extension-catering/i18n/i18n.properties) of the Partner Reference Application Extension into the newly created file.
 
-   > Note: Extending UI annotations in SAP CAP Extension Development allows you to customize and enhance the user interface of a base application without altering its core functionality. Details beyond this excercise can be found in chapter [Extending UI Annotations](https://cap.cloud.sap/docs/guides/extensibility/customization#extending-ui-annotations) of the capire docmentation.
+   > Note: Extending UI annotations in SAP CAP Extension Development allows you to customize and enhance the user interface of a base application without altering its core functionality. Details beyond this exercise can be found in chapter [Extending UI Annotations](https://cap.cloud.sap/docs/guides/extensibility/customization#extending-ui-annotations) of the capire docmentation.
 
 ### Create an Initial Data Set
 
@@ -177,7 +177,7 @@ It is not mandatory to split the extension model into multiple files; however, f
 
   > Note: This adds caterer data for demonstration purposes, which is not suitable for a production environment. 
 
-  > Note: For more details beyond this excercise, refer to the [Partner Reference Application Tutorial - Create an Initial Data Set](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/14-Develop-Core-Application.md#create-an-initial-data-set)
+  > Note: For more details beyond this exercise, refer to the [Partner Reference Application Tutorial - Create an Initial Data Set](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/14-Develop-Core-Application.md#create-an-initial-data-set)
 
 ### Deploy the Extension
   
@@ -199,7 +199,7 @@ With that a new `Caterer` section is introduced in the *Poetry Slam Manager* app
 
 After completing these steps you have created a Fiori Elements app to manage caterer for the poetry slam events.
 
-> Note: The SAP BTP Cloud Foundry runtime environment is required in the subaccount of your customer, as the web application will be deployed to manage caterer information. In this demo, it is already enabled. For more details beyond this excercise, refer to the [Partner Reference Application Tutorial - Enable SAP BTP Cloud Foundry Runtime](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/22-Multi-Tenancy-Prepare-Deployment.md#enable-sap-btp-cloud-foundry-runtime).
+> Note: The SAP BTP Cloud Foundry runtime environment is required in the subaccount of your customer, as the web application will be deployed to manage caterer information. In this demo, it is already enabled. For more details beyond this exercise, refer to the [Partner Reference Application Tutorial - Enable SAP BTP Cloud Foundry Runtime](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/22-Multi-Tenancy-Prepare-Deployment.md#enable-sap-btp-cloud-foundry-runtime).
 
 ### Get Poetry Slam Manager EDMX
 
@@ -262,7 +262,7 @@ You create the Fiori Elements project by uploading the metadata using the *SAP F
 
 ### Fine-Tune the User Interface
 
-Creating the extension UI follows the same process as developing the standard UI for the *Poetry Slam Manager* application. For more information beyond this excercise, you can have a look at the [Partner Reference Application - Fine-Tune the User Interface](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/14-Develop-Core-Application.md#fine-tune-the-user-interface).
+Creating the extension UI follows the same process as developing the standard UI for the *Poetry Slam Manager* application. For more information beyond this exercise, you can have a look at the [Partner Reference Application - Fine-Tune the User Interface](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/14-Develop-Core-Application.md#fine-tune-the-user-interface).
 
 Copy the following files:
 

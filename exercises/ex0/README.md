@@ -13,7 +13,7 @@ After completing these steps you will have an overview of the system landscape o
 
 - There is one [SAP BTP global account](https://emea.cockpit.btp.cloud.sap/cockpit/?idp=teched01.accounts.ondemand.com) that illustrates the partner global account. 
 - In this global account a provider subaccount (*DT265_PROVIDER*) and 40 customer subaccounts are created.
-- Each customer subaccount (*DT265_001* - *DT265_040*) has single sing-on and the development environment configured.
+- Each customer subaccount (*DT265_001* - *DT265_040*) has single sign-on and the development environment configured.
 - All customer subaccounts integrate the same SAP S/4HANA Public Cloud system.
 
 ## Get an Overview of the Provider SAP BTP Subaccount
@@ -34,7 +34,7 @@ After completing these steps you will have an overview about the provider SAP BT
 4. Navigate to *Connectivity*->*Destinations*.
 5. View the existing destinations.
      There are three destinations created. They are required to offer a SAP Build Work Zone launchpad in the customer subaccount. 
-     > Note: You can get more information beyond this excercise about how and why the destinations are created, in chapter [Enhance the Core Application for Deployment](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/23-Multi-Tenancy-Develop-Sample-Application.md) of the Partner Reference Application.
+     > Note: You can get more information beyond this exercise about how and why the destinations are created, in chapter [Enhance the Core Application for Deployment](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/23-Multi-Tenancy-Develop-Sample-Application.md) of the Partner Reference Application.
 
 > Note: The configuration of the provider subaccount is described in more detail in chapter [Bill of Materials](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/01-BillOfMaterials.md) of the Partner Reference Application.
 
