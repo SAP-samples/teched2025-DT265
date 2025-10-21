@@ -109,7 +109,7 @@ It's not mandatory to split the extension model into multiple files. However, fo
 
     2. Copy the following content into the newly created file:
 
-      ```javascript
+      ```cds
       namespace  x_sap.samples.poetryslams.catering;
       using {sap.samples.poetryslams.PoetrySlams, cuid, managed,sap } from 'partner-reference-application';
 
