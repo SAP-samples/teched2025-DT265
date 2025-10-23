@@ -28,7 +28,9 @@ To follow the exercises in this repository, you need:
 ## Exercises
 
 - [Getting Started](exercises/ex0/README.md)
-    - [Get an Overview of the SAP BTP Provider Subaccount](exercises/ex0/README.md#optional-get-an-overview-provider-sap-btp-subaccount)
+    - [Preparation for the Exercises](exercises/ex0/README.md#preparation-for-the-exercises)
+    - [Get an Overview of the System Lanscape](exercises/ex0/README.md#get-an-overview-of-the-system-lanscape)
+    - [Get an Overview of the SAP BTP Provider Subaccount](exercises/ex0/README.md#get-an-overview-of-the-sap-btp-provider-subaccount)
     - [Get an Overview of the SAP BTP Subaccount of Your Customer](exercises/ex0/README.md#get-an-overview-of-the-sap-btp-subaccount-of-your-customer)
     - [Configure the Development Environment SAP Business Application Studio](exercises/ex0/README.md#configure-the-development-environment)
 
@@ -38,13 +40,25 @@ To follow the exercises in this repository, you need:
 
 - [Exercise 2 - Extend the Poetry Slam Manager with a Customer-Specific Extension](exercises/ex2/README.md)
     - [Exercise 2.1 - Extend the Persistence and the User Interface With Custom Fields](exercises/ex2/README.md#exercise-21---extend-the-persistence-and-the-user-interface-with-custom-fields)
-    - [Exercise 2.2 - Test the Extension](exercises/ex2/README.md/#exercise-22---test-the-extension)
+    - [Exercise 2.2 - Test the Extension](exercises/ex2/README.md#exercise-22---test-the-extension)
 
 - [Exercise 3 - Build and Deploy a Customer-Specific Extension to Manage the Caterer Entity](exercises/ex3/README.md)
     - [Exercise 3.1 - Develop a SAP Fiori UI to Manage the Caterer Entity](exercises/ex3/README.md#exercise-31---develop-a-sap-fiori-ui-to-manage-the-caterer-entity)
     - [Exercise 3.2 - Test the Extension](exercises/ex3/README.md#exercise-32---test-the-extension)
     
 - [Exercise 4 (optional) - Personalize the User Interface for All Users of Your Customer](exercises/ex4/README.md)
+
+## Summary
+
+**You provided a subscription:**
+- You created a subscription within minutes and configured the customers launchpad.
+- SAP manages the tenant lifecycle, ensures isolation of customer data, provides a role-based identity access management and secure connections to customer ERP systems, …
+- The subscription has almost no direct cost footprint; costs are caused by usage only! 
+
+**You complemented the subscription by a customer-specific extension:**
+- Your main tasks have been to extend the business model and the UI content.
+- SAP blends the extension with the main app and manages the isolation of the extension, such that only this one customer can see and use the extension. 
+- The extension has a zero direct cost footprint.
 
 ## Contributing
 

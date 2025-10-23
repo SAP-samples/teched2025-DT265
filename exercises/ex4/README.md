@@ -24,4 +24,6 @@ After completing these steps, the **Price** is shown in the **Poetry Slams** tab
 
 ## Summary
 
-You've now personalized the **Poetry Slam Manager** UI for all users of your customer.
+You've now personalized the **Poetry Slam Manager** UI for all users of your customer. 
+
+Congratulations on completing all the exercises! Let's take a moment to reflect on what you've learned in this session by moving on with the [Summary](../../README.md#summary) chapter.

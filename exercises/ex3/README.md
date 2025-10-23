@@ -230,4 +230,4 @@ Creating a group allows you to categorize applications based on functionality, u
 
 You've now extended the **Poetry Slam Manager** subscription of your customer with the **Caterer Management** extension.
 
-Continue with [personalizing the user interface for all users of your customer](../ex3/README.md).
+Continue with [personalizing the user interface for all users of your customer](../ex4/README.md).
