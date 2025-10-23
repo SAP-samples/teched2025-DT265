@@ -5,6 +5,13 @@ In this chapter, you get familar with the system lanscape of this hands-on sessi
 - the SAP BTP subaccount of the customer you serve
 - the development environment
 
+## Preparation for the Exercises
+
+During the exercises, you are asked to note some values that are required in later steps. Enter them to the following Notes.properties file to have them available when required. Additionally, the recommendation is to construct required statements in the file, too.
+
+1. Download the [Notes.properties](./Notes.properties) file to the laptop.
+2. Open the file in Visual Studio Code on the laptop.
+
 ## Get an Overview of the System Lanscape
 
 After completing these steps, you have an overview of the system landscape of this hands-on session. The image below provides a visual representation of the landscape.
@@ -27,14 +34,14 @@ After completing these steps, you have an overview about the SAP BTP provider su
     1. The application subscriptions are:
        - Forms Service by Adobe: Required to configure and manage form templates.
        - SAP HANA Cloud: The tools to access the SAP HANA Cloud database.
-       - **Poetry Slam Manager**: Subscription of the base application.
+       - Poetry Slam Manager: Subscription of the base application.
        - SAP Business Application Studio: The development environment used for this demo.
     2. The instances are part of the deployed **Poetry Slam Manager** application and are required to run it with all features.     
     3. The **Poetry Slam Manager** application runs on the Cloud Foundry Runtime environment.
 4. Navigate to **Connectivity -> Destinations**.
 5. View the existing destinations.
-     There are three destinations created. They are required to offer a SAP Build Work Zone launchpad in the customer subaccount. 
-     > Note: You can get more information beyond this excercise about how and why the destinations are created in the [Enhance the Core Application for Deployment](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/23-Multi-Tenancy-Develop-Sample-Application.md) chapter of the Partner Reference Application.
+     There are three destinations created. They are usedto offer a SAP Build Work Zone launchpad in the customer subaccount. 
+     > Note: You can get more information beyond this exercise about how and why the destinations are created in the [Enhance the Core Application for Deployment](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/23-Multi-Tenancy-Develop-Sample-Application.md) chapter of the Partner Reference Application.
 
 > Note: The configuration of the provider subaccount is described in more detail in the [bill of materials](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/01-BillOfMaterials.md) of the Partner Reference Application.
 
@@ -54,12 +61,14 @@ After completing these steps, you have an overview about the SAP BTP subaccount 
      3. Cloud Foundry environment: Here you deploy the Caterer Management extension in exercise 1.
 5. Navigate to **Connectivity -> Destinations**.
 6. View the existing destinations.
+   - **poetry-slams-cdm**: The Common Data Model (CDM) design time destination points to the location of the stored CDM in the HTML5 repository.
+   - **poetry-slams-rt**: Common Data Model (CDM) runtime destination points to the Approuter URL.
    - **print-service**: Adds the application to manage print queues to SAP Build Work Zone.
    - **s4hc**: Consumes SAP S/4HANA Cloud Public Edition OData services with principal propagation. In this session, basic authentication is used due to a simpler demo use case. In the Partner Reference Application, the setup uses principal propagation with [OAuth 2.0 SAML Bearer authentication](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/34b-Multi-Tenancy-Provisioning-Connect-S4HC.md#configure-oauth-authentication-for-odata-services).
    - **s4hc-tech-user**: Consumes SAP S/4HANA Cloud Public Edition OData services using a technical basic authentication.
    - **s4hc-url**: Provides the SAP S/4HANA Cloud Public Edition hostname for UI navigations and the name of the SAP S/4HANA Cloud Public Edition system as used by business users.
-   - **poetry-slams-cdm**: The Common Data Model (CDM) design time destination points to the location of the stored CDM in the HTML5 repository.
-   - **poetry-slams-rt**: Common Data Model (CDM) runtime destination points to the Approuter URL.
+7. Navigate to **Overview**.
+8. In the **General** section, the **Subdomain** is shown. The subdomain is a specific namespace used to identify and access a subaccount within the SAP BTP platform. Note the **Subdomain**  to the **CustomerSubdomain** entry in your Notes.properties file. You will require it in later steps. 
 
 ## Configure the Development Environment
 

@@ -33,15 +33,18 @@ To follow the exercises in this repository, you need:
     - [Configure the Development Environment SAP Business Application Studio](exercises/ex0/README.md#configure-the-development-environment)
 
 - [Exercise 1 - Provision Your Multi-Tenant Solution to Your Customer](exercises/ex1/README.md)
-    - [Exercise 1.1 - Subscribe the Solution in the Application Subscription of Your Customer](exercises/ex1#exercise-11---subscribe-the-solution-in-the-application-subscription-of-your-customer)
-    - [Exercise 1.2 - Configure SAP Build Work Zone](exercises/ex1#exercise-12---configure-sap-build-work-zone)
+    - [Exercise 1.1 - Subscribe the Solution in the Application Subscription of Your Customer](exercises/ex1/README.md#exercise-11---subscribe-the-solution-in-the-application-subscription-of-your-customer)
+    - [Exercise 1.2 - Configure SAP Build Work Zone](exercises/ex1/README.md#exercise-12---configure-sap-build-work-zone)
 
-- [Exercise 2 - Build and Deploy a Customer-Specific Extension](exercises/ex2/README.md)
-    - [Exercise 2.1 - Extend the Persistence and the User Interface With Custom Fields](exercises/ex2#exercise-21---extend-the-persistence-and-the-user-interface-with-custom-fields)
-    - [Exercise 2.2 - Develop a SAP Fiori UI to Manage the Customer Entity](exercises/ex2#exercise-22---develop-a-fiori-ui-to-manage-the-customer-entity)
-    - [Test the Extension](exercises/ex2/README.md#test-the-extension)
+- [Exercise 2 - Extend the Poetry Slam Manager with a Customer-Specific Extension](exercises/ex2/README.md)
+    - [Exercise 2.1 - Extend the Persistence and the User Interface With Custom Fields](exercises/ex2/README.md#exercise-21---extend-the-persistence-and-the-user-interface-with-custom-fields)
+    - [Exercise 2.2 - Test the Extension](exercises/ex2/README.md/#exercise-22---test-the-extension)
+
+- [Exercise 3 - Build and Deploy a Customer-Specific Extension to Manage the Caterer Entity](exercises/ex3/README.md)
+    - [Exercise 3.1 - Develop a SAP Fiori UI to Manage the Caterer Entity](exercises/ex3/README.md#exercise-31---develop-a-sap-fiori-ui-to-manage-the-caterer-entity)
+    - [Exercise 3.2 - Test the Extension](exercises/ex3/README.md#exercise-32---test-the-extension)
     
-- [Exercise 3 (optional) - Personalize the User Interface for All Users of Your Customer](exercises/ex3/)
+- [Exercise 4 (optional) - Personalize the User Interface for All Users of Your Customer](exercises/ex4/README.md)
 
 ## Contributing
 

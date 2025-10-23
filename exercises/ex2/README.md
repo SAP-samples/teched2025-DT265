@@ -1,6 +1,6 @@
-# Exercise 2 - Build and Deploy a Customer-Specific Extension for Your Customer
+# Exercise 2 - Extend the Poetry Slam Manager with a Customer-Specific Extension
 
-In this exercise, you create a tenant-specific extension called **Caterer Management**. This extension lets you select a caterer for a poetry slam in your customer's **Poetry Slam Manager**.
+In this exercise, you create a tenant-specific extension that lets you select a caterer for a poetry slam in your customer's **Poetry Slam Manager**.
 
 > Note: Some steps are required to enable extensibility in the **Poetry Slam Manager** base application. You can get more details in chapter [Enable Consumer-Specific Extensions](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/50-Multi-Tenancy-Features-Tenant-Extensibility.md) of the Partner Reference Application.
 
@@ -14,7 +14,7 @@ First, create an extension project. This project is a standard SAP Cloud Applica
 
 1. Open the SAP Business Application Studio in your **customer subaccount**.
 
-2. Open the space you created in Excercise 1.
+2. Open the space you created in exercise 1.
 
 3. To start a new development project, go to the settings and open the **Command Palette** or press CTRL + SHIFT + P.
 
@@ -46,9 +46,16 @@ First, create an extension project. This project is a standard SAP Cloud Applica
 
 ### Assign Extension Developer Role
 
-To extend the base model, assign the `PoetrySlamExtensionDeveloperRoleCollection` role collection to your user in the **customer subaccount**. 
+To develop extensions for the **Poetry Slam Manager**, you require the authorizations to extend the base model.
 
-> Note: The `PoetrySlamExtensionDeveloperRoleCollection` role collection is established within the base model as part of the extension enablement process. For more details beyond this excercise, refer to [Partner Reference Application tutorial - *Poetry Slam Manager* Application with extensibility](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/50-Multi-Tenancy-Features-Tenant-Extensibility.md#application-enablement).
+1. In the **customer subaccount**, go to **Security** -> **Role Collections**.
+2. Edit the role collection `PoetrySlamExtensionDeveloperRoleCollection` that was created by the **Poetry Slam Manager**. 
+3. In section **Users**, start typing `DT265` in the **ID** field.
+4. Select your user (`DT265-0*nn*@education.cloud.sap`) from the **Identity Provider** `Custom IAS tenant`. Replace *nn* with your customer number. 
+5. Click the `+`-button.
+6. Save the changes.
+
+> Note: The `PoetrySlamExtensionDeveloperRoleCollection` role collection is established within the base model as part of the extension enablement process. For more details beyond this exercise, refer to [Partner Reference Application tutorial - Poetry Slam Manager Application with extensibility](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/50-Multi-Tenancy-Features-Tenant-Extensibility.md#application-enablement).
 
 ### Pull the Base Model
 
@@ -64,40 +71,42 @@ The following section explains how to retrieve the model from the running applic
 
       2. Select the **poetry-slams-mtx** link.
 
-      3. Copy the **Application Route** from the **Application Overview** for later use (**provider mtx URL**).
+      3. Copy the **Application Route** from the **Application Overview**. Add it to your notes for later use (**ProviderMTXURL**).
 
    2. Get the **Client Credentials** of the MTX module.
 
       1. On the same screen, select **Environment Variables** of the MTX module.
       2. In the JSON file of the **System-Provided** section, locate the *xsuaa* array.
-      3. Copy the **clientid** and **clientsecret** of the **credentials** property.
+      3. Copy the **clientid** of the **credentials** property. Add it to your notes for later use (MTXClientID).
+      4. Copy the **clientsecret** of the **credentials** property. Add it to your notes for later use (MTXClientSecret).
 
-   3. Get the subdomain from the customer subaccount as follows:
-
-        1. In the SAP BTP cockpit of the customer subaccount, navigate to *Overview*.
-        2. Copy the *Subdomain* from the *General* section and note it as **customer subdomain**. You will require it in later steps again. 
-
-   4. Open a new terminal in your SAP Business Application Studio space (Strg + Shift + C). 
+   3. Open a new terminal in your SAP Business Application Studio space (Strg + Shift + C). 
    
-   5. In the terminal, execute the following statement to log in to the MTX module:
+   4. In the terminal, execute the following statement to log in to the MTX module. Use the entries and statement from your notes.
 
          ```bash
-         cds login <PROVIDER-MTX-APP-URL> -s <SUBDOMAIN-OF-YOUR_CUSTOMER> -c '<CLIENT-ID>':'<CLIENT-SECRET>' --plain
+         cds login <ProviderMTXURL> -s <CustomerSubdomain> -c '<MTXClientID>':'<MTXClientSecret>' --plain
          ```
 
 2. Pull the latest CDS model from the provider subaccount to the `partner-reference-extension-catering` extension project.
 
-   1. Run the following command. Use the copied application route **provider mtx URL**.
+   1. Run the following command. Use the copied application route **ProviderMTXURL**. Use the statement from your notes.
 
       ```bash
-      cds pull --from <PROVIDER-MTX-APP-URL>
+      cds pull --from <ProviderMTXURL>
       ```
 
 ### Install the Base Model
 
-To prepare the downloaded base model for use in your extension project, install it by running the `npm install` command.
+The downloaded base model needs to be prepared for use in your extension project.
 
-> Note: This links the base model in the workspace folder to the `node_modules/partner-reference-application`sub directory.
+1. Install it by running the command:
+
+   ```
+   npm install
+   ```
+
+> Note: This links the base model in the workspace folder to the `node_modules/partner-reference-application` sub directory.
 
 ### Write the Extension Code
 
@@ -109,7 +118,7 @@ It's not mandatory to split the extension model into multiple files. However, fo
 
     2. Copy the following content into the newly created file:
 
-      ```javascript
+      ```cds
       namespace  x_sap.samples.poetryslams.catering;
       using {sap.samples.poetryslams.PoetrySlams, cuid, managed,sap } from 'partner-reference-application';
 
@@ -141,14 +150,14 @@ It's not mandatory to split the extension model into multiple files. However, fo
             Text : {
                $value : cuisine.name,
                ![@UI.TextArrangement]: #TextOnly,
-            },
+            }
          }
-      } ;
+      };
       ```
 
-      > Note: By using the `extend` directive, you can add new fields to existing entities, create new entities, and further more. Details beyond this excercise can be found in chapter [Extending the Data Model](https://cap.cloud.sap/docs/guides/extensibility/customization#extending-the-data-model) of the capire docmentation.
+      > Note: By using the `extend` directive, you can add new fields to existing entities, create new entities, and further more. Details beyond this exercise can be found in chapter [Extending the Data Model](https://cap.cloud.sap/docs/guides/extensibility/customization#extending-the-data-model) of the capire docmentation.
        
-      > Note: For more information beyond this excercise on how the prefix `x_` is defined in the base application, have a look at the chapter [Partner Reference Application tutorial - Poetry Slam Manager Application with Extensibility](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/50-Multi-Tenancy-Features-Tenant-Extensibility.md#application-enablement).
+      > Note: The prefix x_ is based on the configuration maintained in the base application. This ensures that artifacts of the extension do not conflict with those in the base application, maintaining consistency and avoiding naming collisions. For more information beyond this exercise on how the prefix `x_` is defined in the base application, have a look at the chapter [Partner Reference Application tutorial - Poetry Slam Manager Application with Extensibility](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/50-Multi-Tenancy-Features-Tenant-Extensibility.md#application-enablement).
 
 2. To extend the service model, you enhance the existing service of the base application. The newly created entities of the data model are automatically included in a read-only manner. They serve as targets for the corresponding compositions. You can also explicitly expose them as writable.
 
@@ -173,255 +182,58 @@ It's not mandatory to split the extension model into multiple files. However, fo
    3. Create new file called `i18n.properties` in the newly created i18n-folder to support translation.
    4. Copy the content of the [i18n.properties](https://github.com/SAP-samples/partner-reference-application-extension/blob/main/partner-reference-extension-catering/i18n/i18n.properties) of the Partner Reference Application Extension into the newly created file.
 
-   > Note: Extending UI annotations in SAP CAP Extension Development allows you to customize and enhance the user interface of a base application without altering its core functionality. Details beyond this excercise can be found in chapter [Extending UI Annotations](https://cap.cloud.sap/docs/guides/extensibility/customization#extending-ui-annotations) of the capire docmentation.
+   > Note: Extending UI annotations in SAP CAP Extension Development allows you to customize and enhance the user interface of a base application without altering its core functionality. Details beyond this exercise can be found in chapter [Extending UI Annotations](https://cap.cloud.sap/docs/guides/extensibility/customization#extending-ui-annotations) of the capire docmentation.
 
 ### Create an Initial Data Set
 
-  Create an initial data set that's available after you've started the application. You can specify the data in SAP CAP by creating a set of CSV files in the **/db/data** folder of the project. 
+For demo purposes, you add an initial data set that's available after you've started the application. You can specify the data in SAP CAP by creating a set of CSV files in the **/db/data** folder of the project. 
 
-  1. Create a file called x_sap.samples.poetryslams.catering-x_CuisineTypeCodes.csv in the **/db/data** folder.
-  
-  2. Copy the data from [x_sap.samples.poetryslams.catering-x_CuisineTypeCodes.csv](https://github.com/SAP-samples/partner-reference-application-extension/blob/main/partner-reference-extension-catering/db/data/x_sap.samples.poetryslams.catering-x_CuisineTypeCodes.csv) into the newly file. It adds the cuisine data to the entity.
+To create the initial data set, follow these steps:
 
-  2. Create a file called x_sap.samples.poetryslams.catering-x_Caterers.csv in the **/db/data** folder.
-  
-  3. Copy the data from [x_sap.samples.poetryslams.catering-x_Caterers.csv](https://github.com/SAP-samples/partner-reference-application-extension/blob/main/partner-reference-extension-catering/db/data/x_sap.samples.poetryslams.catering-x_Caterers.csv) into the newly created file. It adds the caterer data to the entity.
+   1. Open a new terminal in your SAP Business Application Studio space (Strg + Shift + C). 
+   
+   2. In the terminal, execute the following statement to create the files with the initial data in the **/db/data** folder:
+      ```
+      cds add data -f x_sap.samples.poetryslams
+      ```
+ 
+   3. Copy the data from [x_sap.samples.poetryslams.catering-x_CuisineTypeCodes.csv](https://github.com/SAP-samples/partner-reference-application-extension/blob/main/partner-reference-extension-catering/db/data/x_sap.samples.poetryslams.catering-x_CuisineTypeCodes.csv) into the `db/data/x_sap.samples.poetryslams.catering-x_CuisineTypeCodes.csv` file. It adds the cuisine data to the entity.
+   
+   4. Copy the data from [x_sap.samples.poetryslams.catering-x_Caterers.csv](https://github.com/SAP-samples/partner-reference-application-extension/blob/main/partner-reference-extension-catering/db/data/x_sap.samples.poetryslams.catering-x_Caterers.csv) into the `db/data/x_sap.samples.poetryslams.catering-x_Caterers.csv` file. It adds the caterer data to the entity.
 
-  > Note: This adds caterer data for demonstration purposes. It's not suitable for a production environment. 
+   5. Delete the file `x_sap.samples.poetryslams.catering-x_CuisineTypeCodes.texts.csv`. It is required for translation and not used in this exercise.
 
-  > Note: For more details beyond this excercise, refer to the [Partner Reference Application tutorial - Create an Initial Data Set](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/14-Develop-Core-Application.md#create-an-initial-data-set).
+> Note: This adds caterer data for demonstration purposes. It's not suitable for a production environment. 
+
+> Note: For more details beyond this exercise, refer to the [Partner Reference Application tutorial - Create an Initial Data Set](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/14-Develop-Core-Application.md#create-an-initial-data-set).
 
 ### Deploy the Extension
   
 Now that you have added your extension code, you deploy it by pushing the code to your customer subaccount. This ensures that your extension code is isolated to your subaccount, preventing any impact on other customer subaccounts.
 
-To push the extension code to the customer subaccount, follow these steps:
+To push the extension code to the customer subaccount, use the statement from your notes:
 
-1. Use the URL of the MTX module deployed in the provider subaccount. You noted it down as **provider mtx URL**.
+1. Use the URL of the MTX module deployed in the provider subaccount. You noted it down as **ProviderMTXURL**.
 
-2. Use the subdomain from the customer subaccount. You noted it down as **customer subdomain**.
+2. Use the subdomain from the customer subaccount. You noted it down as **CustomerSubdomain**.
 
 ```bash
-cds push --to <PROVIDER-MTX-APP-URL> -s <SUBDOMAIN-OF-YOUR-CUSTOMER-SUBACCOUNT>
+cds push --to <ProviderMTXURL> -s <CustomerSubdomain>
 ```
 
-A new **Caterer** section is introduced in the **Poetry Slam Manager** application within your customer subaccount, enabling you to effortlessly select caterers for your events.
+## Exercise 2.2 - Test the Extension
 
-## Exercise 2.2 - Develop a SAP Fiori UI to Manage the Customer Entity
+Now, a new **Caterer** section is introduced in the **Poetry Slam Manager** application within your customer subaccount, enabling you to effortlessly select caterers for your events.
 
-After completing these steps, you have created a SAP Fiori elements app to manage caterers for the poetry slam events.
-
-> Note: The SAP BTP Cloud Foundry runtime environment is required in the subaccount of your customer, as the web application will be deployed to manage caterer information. In this demo, it is already enabled. For more details beyond this excercise, refer to the [Partner Reference Application tutorial - Enable SAP BTP Cloud Foundry Runtime](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/22-Multi-Tenancy-Prepare-Deployment.md#enable-sap-btp-cloud-foundry-runtime).
-
-### Get Poetry Slam Manager EDMX
-
-You consume the metadata of the **Poetry Slams** OData service from the customer subaccount where the back end is independently managed. This metadata is then utilized to create the SAP Fiori elements project. To obtain the metadata, follow the steps outlined below:
-
-1. Create a folder,for example `partner-reference-extension-catering-ui` in your workspace in SAP Business Application Studio. The path should be **home/user/projects-folder/partner-reference-extension-catering-ui**.
-   
-   1. Open a new terminal in SAP Business Application Studio (Strg + Shift + C).
-   2. The terminal should show the **partner-reference-extension-catering** folder. Navigate to **projects** folder by using the `cd ..` command. 
-   3. Run the `mkdir partner-reference-extension-catering-ui` command to create a new folder.
-   4. Navigate to the new folder in the terminal by using the `cd partner-reference-extension-catering-ui` command. 
-   5. Add the folder to your workspace. Choose the sandwich button on the top left corner and choose **File -> Add Folder to Workspace...**.
-   6. Select the newly created folder called **partner-reference-extension-catering-ui**.
-   
-   Your project structure should look like this:
-   <br><img src="images/FolderStructure.png" alt="folder structure">
-
-2. Create a new file, called **PoetrySlamService.edmx**, in the folder **partner-reference-extension-catering-ui**.
-3. Get the metadata of the base application by following these steps:
-
-   1. Open a new web browser tab.
-   2. Paste the application URL **launchpad site URL** into the browser's address bar and press **Enter**.
-   3. Enable the **Developer Tools**.
-
-      > Note: You can enable **Developer Tools** in *Google Chrome* using a keyboard shortcut:
-      >
-      > 1. Windows/Linux: Press `Ctrl + Shift + I` or `F12`.  
-      > 2. Mac: Press `Cmd + Option + I`.
-
-   4. Navigate to the **Poetry Slam Events** application.
-   5. In the **Network** tab's filter bar, type `$metadata` to filter the requests related to the metadata.
-   6. Copy the response of the metadata API call.
-
-3. Paste the metadata into the *PoetrySlamService.edmx* file. 
-
-### Add a Web Application with SAP Fiori Elements
-
-You create the SAP Fiori elements project by uploading the metadata using the **SAP Fiori Elements Application Wizard** under the **partner-reference-extension-catering-ui** folder.
-
-1. To start a new development project, go to the settings in SAP Business Application Studio from your customer subaccount and open the **Command Palette**.
-2. To start the wizard, search for **SAP Business Application Studio: New Project from Template** in the **Command Palette...**.
-3. Select the **SAP Fiori Generator** module template and choose *Start*. 
-4. Choose **List Report Page** and choose *Next*.
-5. Select the data source and the OData service as follows:
-   - **Data source**: Upload a Metadata Document
-   - **Metadata file path**: Upload the metadata file created in the previous section
-6. Select the main entity from the list:
-   - **Main entity**: x_Caterers
-   - **Automatically add table columns**: Yes
-   - **Table Type**: Responsive
-7. Add further project attributes. For attributes that aren't listed, use the default:
-   - **Module name**: caterer
-   - **Application title**: Caterers
-   - **Application namespace**: leave empty
-   - **Description**: Application to create and manage caterers
-   - **Project folder path**: Choose the project folder. Make sure that the target folder path is set to `/home/user/projects/partner-reference-extension-catering-ui`.
-   - **Add deployment configuration**: Yes
-8. Select the deployment configuration:
-   - **Please choose the target**: Cloud Foundry
-   - **Destination name**: none
-   - **Add Router Module**: Add Application to Managed Application Router
-9. Choose **Finish**. The wizard creates the **caterer** folder, which contains all files related to the user interface.
-
-### Fine-Tune the User Interface
-
-Creating the extension UI follows the same process as developing the standard UI for the **Poetry Slam Manager** application. For more information beyond this excercise, you can have a look at the [Partner Reference Application tutorial - Fine-Tune the User Interface](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/14-Develop-Core-Application.md#fine-tune-the-user-interface).
-
-Copy the following files:
-
-1. Overwrite the `caterer/webapp/manifest` file with the [`manifest.json`](https://github.com/SAP-samples/partner-reference-application-extension/blob/main/partner-reference-extension-catering-ui/caterer/webapp/manifest.json) file from the Partner Reference Application Extension. It describes the application structure, routing, services, dependencies, and SAP Fiori launchpad integration. The **crossNavigation** section must be defined to enable intent-based navigation, allowing the app to be launched using a specified semantic object and action.
-2. Overwrite the `caterer/webapp/annotations/annotation.xml` file with the [`annotation.xml`](https://github.com/SAP-samples/partner-reference-application-extension/blob/main/partner-reference-extension-catering-ui/caterer/webapp/annotations/annotation.xml) file from the Partner Reference Application Extension. It defines UI-specific annotations that dictates how data is displayed and behaves in the SAP Fiori application.
-3. Overwrite the `caterer/webapp/i18n/i18n.properties` file with the [`i18n.properties`](https://github.com/SAP-samples/partner-reference-application-extension/blob/main/partner-reference-extension-catering-ui/caterer/webapp/i18n/i18n.properties) file from the Partner Reference Application Extension. It takes care of the translation of the UI into different languages.
-
-### Add Destination Route to App Router
-
-To ensure secure communication between the new SAP Fiori application and the core **Poetry Slam Manager** OData service, all requests from the SAP Fiori application must be routed. This is achieved by configuring the routing rules in the [xs-app.json](https://github.com/SAP-samples/partner-reference-application-extension/blob/main/partner-reference-extension-catering-ui/caterer/xs-app.json) file. Add the following destination route as the first entry in the route configuration:
-
-```json
-{     
-   "source": "^/odata/v4/poetryslamcaterer/(.*)$",
-   "target": "/odata/v4/poetryslamservice/$1",
-   "destination": "poetry-slams-caterer",
-   "authenticationType": "xsuaa",
-   "csrfProtection": true
-}
-```
-
-> Note: For more information about the properties, check the [Partner Reference Application Extension tutorial - Add Destination Route to App Router](https://github.com/SAP-samples/partner-reference-application-extension/blob/main/Tutorials/03-FioriUIForExtendedEntity.md#add-destination-route-to-app-router).
-
-### Service Broker Setup
-
-This chapter provides information only. In this demo scenario, the service broker is already set up in the customer subaccount. You don't need to take any action.
-
-To access the **Poetry Slams** OData services from your SAP Fiori application, the service broker is set up. It enables secure access to application OData services by utilizing tenant-specific credentials and authorizations. This ensures effective tenant isolation in a multi-tenant application environment. 
-
-> Note: In case you want to get more information on how the service broker is added to the **Poetry Slam Manager** application, refer to the [Partner Reference Application tutorial - Enable API Access to SAP BTP Applications Using Service Broker](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/42a-Multi-Tenancy-Service-Broker.md#enable-api-access-to-sap-btp-applications-using-service-broker).
-
-
-### Create the Destination to Access the Base Application
-
-You need to create a destination in the customer subaccount to connect to the **Poetry Slams** OData service using the service broker instance. This destination was configured in the [xs-app.json](https://github.com/SAP-samples/partner-reference-application-extension/blob/main/partner-reference-extension-catering-ui/PoetrySlamService.edmx) file to enable tenant-specific data calls in an earlier step.
-
-In the SAP BTP consumer subaccount, go to **Connectivity** and choose **Destinations** to create a new destination with the following field values:
-
-| Parameter Name    | Value                                                                                             |
-| :---------------- | :------------------------------------------------------------------------------------------------ |
-| **Name**            | poetry-slams-caterer                                                                            |
-| **Type**            | HTTP                                                                                            |
-| **Description**     | Destination description. For example, `Poetry Slams Manager`.                                  |
-| **URL**             | Get the endpoint of the service broker instance *psm-sb-sub1-full*. *Check the details below*                              |
-| **Proxy Type**      | Internet                                                                                        |
-| **Authentication**  | OAuth2UserTokenExchange                                                                         |
-| **Client Id**       | Get the client id from the service key of the service broker instance *psm-sb-sub1-full*. *Check the details below*                                                                        |
-| **Client secret**   | Get the client secret from the service key of the service broker instance *psm-sb-sub1-full*. *Check the details below.*                                                                        |
-| **Token Service URL**:      | Get the URL of the uaa-section from the service key of the service broker instance *psm-sb-sub1-full* and add `/oauth/token`.  *Check the details below*       |
-| **Token Service URL Type**: | Dedicated                                                                               |
-
-Details:
-- To open the service key of the service broker instance *psm-sb-sub1-full* in the customer subaccount, follow these steps:
-   1. In the SAP BTP cockpit of the customer subaccount, navigate to *Services* -> *Instances and Subscriptions*.
-   2. View the credentials of the service broker instance *psm-sb-sub1-full*.
-   3. Use the *psm-servicebroker* in section *endpoints* as **URL**.
-   4. Get the **client id** and **client secret** from the *uaa*-section.
-   5. For the **Token Service URL**, get the *URL* of the *uaa*-section and add `/oauth/token`. 
-
-### Deploy to Cloud Foundry
-
-Now that you have completed all the development and configurations, you can proceed to deploy the application.
-
-1. In the SAP Business Application Studio, open a new terminal and navigate into the `home/user/projects/partner-reference-extension-catering-ui` folder.
-2. Log on to SAP BTP Cloud Foundry runtime:
-   1. Run the command: 
-      
-      ```
-      cf login -a https://api.cf.eu10-004.hana.ondemand.com --origin teched01-platform
-      ```
-
-   2. Enter your development user and password.
-   3. Select the org of the **SAP BTP customer subaccount for the application (*dt2650nn*)**. Replace nn with the number of your customer.
-      > Note: The SAP BTP Cloud Foundry runtime space of your customer (*DT265*) is selected by default.
-
-3. Navigate into the **caterer** folder with the `cd caterer` command.
-4. To install the dependencies, run the `npm install` command.
-5. To build the application, run the `npm run build:mta` command.
-6. To deploy the application, run the `npm run deploy` command.
-
-### Configure SAP Build Work Zone
-
-You already created a *Launchpad Site* in SAP Build Work Zone for the **Poetry Slam Manager** application. Now you have to add the **Caterer** web application.
-
-#### Add Web Application to the Content Manager
-
-The Content Manager is the central place to manage applications, roles, and groups in SAP Build Work Zone. Applications must be added to the content repository before they can be assigned to users.
-
-1. Open the **SAP Build Work Zone, standard edition** application under **Services -> Instances and Subscriptions** in the **customer subaccount**. The site manager is opened.
-2. Open the **Channel Manager**.
-3. Update the **HTML5 Apps** content channel using the **Update content** button on the right side of the table to get the latest changes of your application.
-4. Go to the **Content Manager**.
-5. Select **Content Explorer**.
-6. Choose **HTML5 Apps**.
-7. Select the **Caterer** web application.
-8. Choose *Add*.
-
-#### Assign the Application to a Role
-
-Role assignments define who can access and interact with an application within the launchpad. By assigning the application to the **Everyone** role or any specific role based on business needs, you ensure that authorized users can see and use the application. The **Everyone** role is assigned to a site by default.
-
-1. Open the **Content Manager**.
-2. Click on the **Everyone** role (available by default).
-3. Edit the role.
-4. Assign the **Caterer** application to this role.
-5. Save your changes.
-
-#### Create a New Group for the Application
-
-Creating a group allows you to categorize applications based on functionality, user roles, or business processes. This improves accessibility by ensuring that related applications appear together in a structured manner.
-
-1. Open the **Content Manager**.
-2. Create a new **Group**.
-3. Enter a title, for example **Caterer**, and a description, for example **Maintain caterer** for better organization.
-4. Add the **Caterer** application to the newly created group.
-5. Save your changes.
-
-## Test the Extension
-
-1. Now, let's add a new caterer. Launch the **Caterer** application.
-
-    1. Open the SAP Build Work Zone launchpad you created and enhanced with the extension. Use the URL **launchpad site URL** you noted down before.
-    2. Choose **Caterer**.
-
-2. A list of existing caterers is displayed in the table. Choose **Create** and enter the following details:
-
-    1. **Name**: Goose   
-    2. **Contact Person**: Peter 
-    3. **Phone**: +555-1212
-    4. **Email**: peter@goosesap.com
-    5. **Cuisine**: Mexican
-    6. **Maximum Service Capacity**: 300
-
-3. Choose **Create** to add a new caterer.
-4. Switch to the **Poetry Slam Manager** solution of your customer.
-5. Open the **Poetry Slam Events** app.
-6. Select a published poetry slam.
-
-   You can see that the new **Caterer** section is available.
-7. Choose **Edit** and select the newly created caterer for your event from the predefined list. The poetry slam is updated with the caterer information.
-8. Save your changes.
+1. Open the SAP Build Work Zone launchpad you created and enhanced with the extension. Use the URL **LaunchpadSiteURL** you noted down before.
+2. Choose **Poetry Slam Manager** solution of your customer.
+3. Open the **Poetry Slam Events** app.
+4. Select a published poetry slam. You can see that the new **Caterer** section is available.
+5. Choose **Edit** and select a caterer for your event from the predefined list. The poetry slam is updated with the caterer information.
+6. Save your changes.
 
 ## Summary
 
-You've now extended the **Poetry Slam Manager** subscription of your customer with the **Caterer** extension.
+You've now extended the **Poetry Slam Manager** of your customer with a **Caterer** section in which a caterer for the event can be selected.
 
-Continue with [personalizing the user interface for all users of your customer](../ex3/README.md).
+Continue with [developing a SAP Fiori UI to manage the caterer entity](../ex3/README.md).
