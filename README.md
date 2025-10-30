@@ -29,7 +29,7 @@ To follow the exercises in this repository, you need:
 
 - [Getting Started](exercises/ex0/README.md)
     - [Preparation for the Exercises](exercises/ex0/README.md#preparation-for-the-exercises)
-    - [Get an Overview of the System Lanscape](exercises/ex0/README.md#get-an-overview-of-the-system-lanscape)
+    - [Get an Overview of the System Landscape](exercises/ex0/README.md#get-an-overview-of-the-system-landscape)
     - [Get an Overview of the SAP BTP Provider Subaccount](exercises/ex0/README.md#get-an-overview-of-the-sap-btp-provider-subaccount)
     - [Get an Overview of the SAP BTP Subaccount of Your Customer](exercises/ex0/README.md#get-an-overview-of-the-sap-btp-subaccount-of-your-customer)
     - [Configure the Development Environment SAP Business Application Studio](exercises/ex0/README.md#configure-the-development-environment)

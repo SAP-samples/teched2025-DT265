@@ -6,15 +6,15 @@ In this exercise, you create a tenant-specific extension called **Caterer Manage
 
 ## Exercise 3.1 - Develop a SAP Fiori UI to Manage the Caterer Entity
 
-After completing these steps, you have created a SAP Fiori elements app to manage caterers.
+After completing below steps, you have created a SAP Fiori elements app to manage caterers.
 
 ### Get Poetry Slam Manager EDMX
 
 You consume the metadata of the **Poetry Slams** OData service from the customer subaccount where the back end is independently managed. This metadata is then utilized to create the SAP Fiori elements project. To obtain the metadata, follow the steps outlined below:
 
-1. Create a folder,for example `partner-reference-extension-catering-ui` in your workspace in SAP Business Application Studio. The path should be **/home/user/projects-folder/partner-reference-extension-catering-ui**.
+1. Create a folder,for example `partner-reference-extension-catering-ui` in your workspace in SAP Business Application Studio. The path should be **/home/user/projects/partner-reference-extension-catering-ui**.
    
-   1. Open a new terminal in SAP Business Application Studio (Strg + Shift + C).
+   1. Open a new terminal in SAP Business Application Studio (Control + Shift + C).
    2. The terminal should show the **partner-reference-extension-catering** folder. Navigate to **projects** folder by using the command:
       ```
       cd ..

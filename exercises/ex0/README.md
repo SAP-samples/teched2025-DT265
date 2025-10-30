@@ -1,6 +1,6 @@
 # Getting Started
 
-In this chapter, you get familar with the system lanscape of this hands-on session. You take a look at:
+In this chapter, you get familar with the system landscape of this hands-on session. You take a look at:
 - the SAP BTP provider subaccount where the base application **Poetry Slam Manager** is deployed
 - the SAP BTP subaccount of the customer you serve
 - the development environment
@@ -12,9 +12,9 @@ During the exercises, you are asked to note some values that are required in lat
 1. Download the [Notes.properties](./Notes.properties) file to the laptop.
 2. Open the file in Visual Studio Code on the laptop.
 
-## Get an Overview of the System Lanscape
+## Get an Overview of the System Landscape
 
-After completing these steps, you have an overview of the system landscape of this hands-on session. The image below provides a visual representation of the landscape.
+After completing below steps, you have an overview of the system landscape of this hands-on session. The image below provides a visual representation of the landscape.
 
 <img src="images/OverviewSetup.png" alt="overview demo setup" width="100%">
 
@@ -25,7 +25,7 @@ After completing these steps, you have an overview of the system landscape of th
 
 ## Get an Overview of the SAP BTP Provider Subaccount
 
-After completing these steps, you have an overview about the SAP BTP provider subaccount.
+After completing below steps, you have an overview about the SAP BTP provider subaccount.
 
 1. Open the provider subaccount ([*DT265_PROVIDER*](https://emea.cockpit.btp.cloud.sap/cockpit?idp=teched01.accounts.ondemand.com#/globalaccount/bab22592-b4b6-405e-add4-a6f3d9869306/subaccount/ed30d4c9-9da7-421c-bd08-c5ae51337fce/subaccountoverview)) in the SAP BTP Cockpit.
 2. Navigate to **Services -> Instances and Subscriptions**.
@@ -40,14 +40,14 @@ After completing these steps, you have an overview about the SAP BTP provider su
     3. The **Poetry Slam Manager** application runs on the Cloud Foundry Runtime environment.
 4. Navigate to **Connectivity -> Destinations**.
 5. View the existing destinations.
-     There are three destinations created. They are usedto offer a SAP Build Work Zone launchpad in the customer subaccount. 
+     There are three destinations created. They are used to offer a SAP Build Work Zone launchpad in the customer subaccount. 
      > Note: You can get more information beyond this exercise about how and why the destinations are created in the [Enhance the Core Application for Deployment](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/23-Multi-Tenancy-Develop-Sample-Application.md) chapter of the Partner Reference Application.
 
 > Note: The configuration of the provider subaccount is described in more detail in the [bill of materials](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/01-BillOfMaterials.md) of the Partner Reference Application.
 
 ## Get an Overview of the SAP BTP Subaccount of Your Customer
 
-After completing these steps, you have an overview about the SAP BTP subaccount of your customer.
+After completing below steps, you have an overview about the SAP BTP subaccount of your customer.
 
 1. Switch to the SAP BTP subaccount of your customer (*DT265_0nn*).
 2. Navigate to **Services -> Instances and Subscriptions**.
@@ -72,7 +72,7 @@ After completing these steps, you have an overview about the SAP BTP subaccount 
 
 ## Configure the Development Environment
 
-After completing these steps, you have accessed and configured the SAP Business Application Studio to develop your customer-specific extension.
+After completing below steps, you have accessed and configured the SAP Business Application Studio to develop your customer-specific extension.
 
 1. In the SAP BTP subaccount of your customer (*DT265_0nn*), navigate to **Services -> Instances and Subscriptions**.
 3. Open the **SAP Business Application Studio**.

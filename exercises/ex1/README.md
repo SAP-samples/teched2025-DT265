@@ -4,7 +4,7 @@ In this exercise, you create a subscription of your multi-tenant solution to the
 
 ## Exercise 1.1 - Subscribe the Solution in the Application Subscription of Your Customer
 
-After completing these steps, you have subscribed the SAP BTP multi-tenant application **Poetry Slam Manager** in the SAP BTP subaccount of your customer.
+After completing below steps, you have subscribed the SAP BTP multi-tenant application **Poetry Slam Manager** in the SAP BTP subaccount of your customer.
 
 To provision the application on the subaccount for a specific customer, subscribe to the **Poetry Slam Manager** application:
 
@@ -14,7 +14,7 @@ To provision the application on the subaccount for a specific customer, subscrib
 
 ## Exercise 1.2 - Configure SAP Build Work Zone
 
-After completing these steps, you have configured SAP Build Work Zone to access the subscribed application **Poetry Slam Manager**. 
+After completing below steps, you have configured SAP Build Work Zone to access the subscribed application **Poetry Slam Manager**. 
 
 ### Configure SAP Build Work Zone
 
@@ -28,8 +28,8 @@ Since the web application and the destinations for the provided content are avai
 4. Create a new **Content Provider**. 
 	1. As title, set *Poetry Slam Manager*.
 	2. As description, set *Content of *Poetry Slam Manager* Solution*.
-	3. As **Design-Time-Destination**, select *poetry-slams-cdm*.
-	4. As **Runtime-Destination**, select *poetry-slams-rt*.
+	3. As **Design-Time-Destination**, select *poetry-slams-cdm*. It is used to fetch the structure and metadata of the application content.
+	4. As **Runtime-Destination**, select *poetry-slams-rt*. It is used to access the business data and resources from the application.
 	5. Save the content channel.
 	6. Refresh the page to see when the channel is successfully created.
 	7. Use *Report* to see the created elements of your channel.
@@ -39,11 +39,13 @@ Since the web application and the destinations for the provided content are avai
 #### Review the Created Content of Your Web Application
 
 1. Open the **Content Manager**.
-2. The **Poetry Slam Manager Role** and the **Poetry Slam Visitor Role** were automatically created. The names in the **ID** fields are the names of the role collections that are created in the SAP BTP cockpit of the consumer account that handles the access for the application content.
+2. The **Poetry Slam Manager Role** and the **Poetry Slam Visitor Role** were automatically created during subscription of the application. The names in the **ID** fields are the names of the role collections that are created in the SAP BTP cockpit of the consumer account that handles the access for the application content.
 3. Access one of the roles to view the assigned apps.
 4. The **Poetry Slams** and the **Visitors** apps are automatically assigned. These were defined in the provided **Poetry Slam Manager** application.
 
 > Note: In the **Poetry Slam Manager**, the **Poetry Slam Visitor Role** is used to handle read-only access. In this exercise, the role will not be configured and used.
+
+> Note:The roles are defined in the *Poetry Slam Manager* application. You can get more details in chapter [Add Authentication and Role-Based Authorization](https://github.com/SAP-samples/partner-reference-application/blob/main/Tutorials/14-Develop-Core-Application.md#add-authentication-and-role-based-authorization).
 
 #### Create a Launchpad Site
 
@@ -55,7 +57,7 @@ In this step, you create and review a launchpad site.
 4. Edit the role assignments.
 5. Enable the assignment status of the **Poetry Slam Manager Role**.
 6. Save the changes.
-7. To launch the site, open the **URL** provided in the **Properties** of the **Site Settings**. Note down the URL of the **Poetry Slam Manager** launchpad site for later us (**LaunchpadSiteURL**). On the site, you can't see any tiles yet. Before you can see the **Poetry Slams** and **Visitors** tiles, you need to set up the authorization roles. 
+7. To launch the site, open the **URL** provided in the **Properties** of the **Site Settings**. Note down the URL of the **Poetry Slam Manager** launchpad site for later use (**LaunchpadSiteURL**). On the site, you can't see any tiles yet. Before you can see the **Poetry Slams** and **Visitors** tiles, you need to set up the authorization roles. 
 
 #### Configure Authorization Roles 
 

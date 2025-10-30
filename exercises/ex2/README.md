@@ -6,7 +6,7 @@ In this exercise, you create a tenant-specific extension that lets you select a 
 
 ## Exercise 2.1 - Extend the Persistence and the User Interface With Custom Fields
 
-After completing these steps, you have extended the **Poetry Slam Manager** of your customer with a **Caterer** section in which a caterer for the event can be selected.
+After completing below steps, you have extended the **Poetry Slam Manager** of your customer with a **Caterer** section in which a caterer for the event can be selected.
 
 ### Create a New Project Based on SAP Cloud Application Programming Model
 
@@ -33,12 +33,10 @@ First, create an extension project. This project is a standard SAP Cloud Applica
 8. Adapt the created *package.json* to incorporate the following configurations. For reference, have a look at the [package.json](https://github.com/SAP-samples/partner-reference-application-extension/blob/main/partner-reference-extension-catering/package.json) file in the Partner Reference Application Extension.
 
     ```json
-    {
       "extends": "partner-reference-application",
       "workspaces": [
         ".base"
       ]
-    }
     ```
 
     - `extends` is the identifier used by the extension model to reference the base model. It must be a valid base application name, as it serves as the package name for the base model when executing `cds pull`.
@@ -80,7 +78,7 @@ The following section explains how to retrieve the model from the running applic
       3. Copy the **clientid** of the **credentials** property. Add it to your notes for later use (MTXClientID).
       4. Copy the **clientsecret** of the **credentials** property. Add it to your notes for later use (MTXClientSecret).
 
-   3. Open a new terminal in your SAP Business Application Studio space (Strg + Shift + C). 
+   3. Open a new terminal in your SAP Business Application Studio space (Control + Shift + C). 
    
    4. In the terminal, execute the following statement to log in to the MTX module. Use the entries and statement from your notes.
 
@@ -190,7 +188,7 @@ For demo purposes, you add an initial data set that's available after you've sta
 
 To create the initial data set, follow these steps:
 
-   1. Open a new terminal in your SAP Business Application Studio space (Strg + Shift + C). 
+   1. Open a new terminal in your SAP Business Application Studio space (Control + Shift + C). 
    
    2. In the terminal, execute the following statement to create the files with the initial data in the **/db/data** folder:
       ```

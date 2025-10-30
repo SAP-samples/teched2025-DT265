@@ -6,7 +6,7 @@ In this exercise, you personalize the user interface of the **Poetry Slam Manage
 
 ## Exercise 4.1 - Adapting the User Interface for All Users
 
-After completing these steps, the **Price** is shown in the **Poetry Slams** table of the **Poetry Slam Manager** for all users:
+After completing below steps, the **Price** is shown in the **Poetry Slams** table of the **Poetry Slam Manager** for all users:
 
 1. Open the **Poetry Slam Manager** application.
 2. Open the **User Action** menu by choosing your profile in the top right corner of the UI.
