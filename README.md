@@ -1,5 +1,5 @@
 # DT265 - Provision and Extend Multi-Tenant Solutions Based on CAP for SAP Cloud ERP
-
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/teched2025-DT265)](https://api.reuse.software/info/github.com/SAP-samples/teched2025-DT265)
 ## Description
 
 This repository contains the material for the SAP TechEd 2025 session called DT265 - Provision and extend multi-tenant solutions based on CAP for SAP Cloud ERP.  
